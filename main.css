@@ -1,0 +1,104 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper{
+	width: 90%;
+	margin: 20px auto;
+	max-width: 90%;
+	background-color: #66C7F4;
+}
+
+.sidebar{
+	float: left;
+	background-color: #FF1053;
+	height: 1000px;
+	box-shadow: -5px 0 5px -5px #333, 5px 0 5px -5px #333;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.main{
+	height: 800px;
+	background-color: #66C7F4;
+	text-align: left;
+}
+
+.titlebar{
+	height: 200px;
+	background-color: #6C6EA0;
+	text-align: center;
+}
+
+.titleText1{
+	color: white;
+	font-weight: 800;
+	font-size: 60px;
+	letter-spacing: 2px;
+	position: static;
+	top: 20px;
+	left: 20px;
+	font-family: 'Kanit', sans-serif;
+}
+.titleText2{
+	color: white;
+	font-weight: 800;
+	font-size: 30px;
+	letter-spacing: 2px;
+	position: static;
+	top: 20px;
+	left: 60px;
+	font-family: 'Kanit', sans-serif;
+}
+
+.subtitleText{
+	color: black;
+	font-weight: 600;
+	font-size: 40px;
+	letter-spacing: 2px;
+	position: relative;
+	top: 20px;
+	left: 40px;
+	float: left;
+	font-family: 'Kanit', sans-serif;
+}
+
+.bodyText1{
+	color: black;
+	font-weight: 600;
+	font-size: 20px;
+	font-family: 'Kanit', sans-serif;
+	float: left;
+	position: relative;
+}
+
+.sidebarItem{
+	font-family: 'Carter One', cursive;
+	color: white;
+	font-weight: 600;
+	font-size: auto;
+	padding: 10px 25px;
+	float: center;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	width:75%;
+	height: 50px;
+	background-color: #FF1053;
+}
+
+.sidebarItem:hover, .sidebarItem:active {
+	background-color: #f50649;
+}
+
+.bodyText{
+	font-family: 'Kanit', sans-serif;
+	font-weight: 400;
+}
+.sidebarButton{
+	float: left;
+	padding-left: 20px;
+	padding-top: 20px;
+}
