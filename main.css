@@ -13,7 +13,7 @@
 .sidebar{
 	float: left;
 	background-color: #FF1053;
-	height: 1000px;
+	height: 2000px;
 	box-shadow: -5px 0 5px -5px #333, 5px 0 5px -5px #333;
 	padding-top: 10px;
 	padding-left: 10px;
@@ -21,9 +21,9 @@
 }
 
 .main{
-	height: 800px;
+	height: 1800px;
 	background-color: #66C7F4;
-	text-align: left;
+	
 }
 
 .titlebar{
@@ -53,15 +53,25 @@
 	font-family: 'Kanit', sans-serif;
 }
 
-.subtitleText{
+.subtitleText1{
+	color: black;
+	font-weight: 700;
+	font-size: 50px;
+	letter-spacing: 2px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	font-family: 'Kanit', sans-serif;
+}
+
+.subtitleText2{
 	color: black;
 	font-weight: 600;
 	font-size: 40px;
 	letter-spacing: 2px;
-	position: relative;
-	top: 20px;
-	left: 40px;
-	float: left;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
 	font-family: 'Kanit', sans-serif;
 }
 
@@ -70,8 +80,9 @@
 	font-weight: 600;
 	font-size: 20px;
 	font-family: 'Kanit', sans-serif;
-	float: left;
-	position: relative;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
 }
 
 .sidebarItem{
