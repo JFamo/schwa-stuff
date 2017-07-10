@@ -50,6 +50,18 @@
 	font-family: 'Kanit', sans-serif;
 }
 
+.sidebarText1{
+	color: white;
+	font-weight: 600;
+	font-size: 30px;
+	letter-spacing: 2px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	float: left;
+	font-family: 'Kanit', sans-serif;
+}
+
 .subtitleText1{
 	color: black;
 	font-weight: 600;

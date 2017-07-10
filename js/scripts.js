@@ -5,10 +5,35 @@ function sidebarToggle(){
 	var contentWidth;	//current width of the content (main and titlebar)
 
   //THIS SECTION SETS THE LINKS
-  document.getElementById("sidebarLinkMain").href = "index.html";
-  document.getElementById("sidebarLinkContact").href = "contact.html";
-  document.getElementById("sidebarLinkCodeMagic").href = "codemagic.html";
-  document.getElementById("sidebarLinkGolf").href = "golfanywhere.html";
+
+  document.getElementById("sidebar").innerHTML = `
+  <div id="sidebarContent">
+    <center>
+      <p class="sidebarText1">
+        Info
+      </p>
+      <a href="index.html" class="sidebarItem" id="sidebarLinkMain">Main</a>
+      <a href="contact.html" class="sidebarItem" id="sidebarLinkContact">Contact</a>
+      <p class="sidebarText1">
+        Games
+      </p>
+      <a href="golfanywhere.html" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
+      <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
+      <a href="planeevolution.html" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
+      <a href="spacegame.html" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
+      <a href="#" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
+      <p class="sidebarText1">
+        Software
+      </p>
+      <a href="#" class="sidebarItem" id="sidebarLinkBXD">Bitwise XOR Decryptor</a>
+      <p class="sidebarText1">
+        Others
+      </p>
+      <a href="#" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
+      <a href="#" class="sidebarItem" id="sidebarLinkSupremacy">Supremacy</a>
+      <a href="#" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
+    <center>
+  </div>`;
 
 	//check the action, and start that action
 	if(document.getElementById("sidebar").style.display == "none"){

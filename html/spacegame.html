@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<!--Technical Stuff, Imports-->
+<script src="../js/scripts.js"></script>
+
+<head>
+	
+	<title>SchwaStuff</title>
+	<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<!--Page Content-->
+<body>
+
+	<div class="wrapper">
+
+		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
+
+		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
+
+
+			<img class="sidebarButton" src="../img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
+			<p class="titleText1">
+				Joshua Famous
+			</p>
+			<br />
+			<p class="titleText2">
+				Game Maker &#8226 Software Developer &#8226 Web Designer
+			</p>
+
+		</div>
+
+		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
+
+			<!--
+			NO BUTTON - this game isn't online
+			<a href="http://34.194.108.205/planeevolution/index.html" class="playButton" target="_blank">Play</a>
+			-->
+
+			<p class="subtitleText1">
+				Space Game
+			</p>
+
+			<p class="bodyText1">
+				This game - without a real title yet - is my first multiplayer venture. Downloading the client executable will allow you to join any IP currently running a server. !Note! that some user-functionality is missing, and you will find it especially difficult to run this game on a school or protected network. I have included instructions below which will create a batch file to run the application on a school network anyway, but alternatively you can wait until this game has HTML functionality.
+			</p>
+			<br>
+
+			<center>
+			<img src="../img/spacePic.png" width="100%"/>
+			</center>
+
+			<p class="subtitleText2">
+				Description
+			</p>
+
+			<p class="bodyText1">
+				Enter a large multiplayer galaxy with nothing but a small ship and your name. Shoot asteroids to harvest resources which can be sold at plants to gain credits, or become a trader and ship resources from planet to planet for a profit. Upgrade your ship at certain planets for large sums of credits and go destroy other players with your superior weaponry, or purchase a cargo freighter and become an expert trader.
+				<br><br>
+				Encounter space obstacles like black holes which spell doom, a smuggler's outpost willing to pay for rare goods, and satellites which can heal anyone nearby. With an constantly-expanding universe there's always more to explore.
+			</p>
+			<br>
+
+			<p class="subtitleText2">
+				Instructions
+			</p>
+
+			<p class="bodyText1">
+				W and S : Move forward and backwards
+				<br><br>
+				A and D : Rotate your ship
+				<br><br>
+				Spacebar : Shoot
+				<br><br>
+				Left-Click Planets : Open planet resource Gui
+				<br><br>
+				Right-Click Planets : Open planet government Gui (WIP)
+				<br><br>
+				E : Hyperspace jump
+				<br><br>
+				Esc : Display properties
+			</p>
+
+			<p class="subtitleText2">
+				Setup
+			</p>
+
+			<p class="bodyText1">
+				The game is lacking in some user functionality, but if you wish to play it now first download a client and a server executable below. Run the server executable on your computer and leave it running until you are finished playing. Run the client and connect to the IP 127.0.0.1 to connect to the server running on your own machine. This will allow you to play singleplayer.
+				<br><br>
+				I will continue to develop the multiplayer setup to be more user-friendly.
+				<br><br>
+				If attempting to run the game on a school network, follow these instructions to run the application.
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Download and unzip the applications if you have not done so already</li>
+					<li>Open Notepad</li>
+					<li>Type " start /d "path" JoshSpaceGameClient03.exe "</li>
+					<li>Replace path with the location of the application, for example C:/Users/JohnDoe/Downloads</li>
+					<li>Save the notepad document as startgame.bat</li>
+					<li>Double click and run startgame.bat</li>
+				</ul>
+			</p>
+
+			<p class="subtitleText2">
+				Changelog
+			</p>
+
+			<p class="bodyText1">
+				Version 0.3.0
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Added Government Tab of Planets</li>
+					<li>Attempted Bugfix to "DoAdd Error"</li>
+					<li>Added Hyperspace Jump</li>
+					<li>Added Ghhhk Crystals and Smugglers' Outpost</li>
+					<li>Performance Updates</li>
+					<li>Basic Name Censoring</li>
+				</ul>
+			</p>
+			<br>
+
+			<p class="subtitleText2">
+				Downloads
+			</p>
+
+			<p class="bodyText1">
+				Below are the downloads for the game files.
+				<br>
+				<a href="http://34.194.108.205/spacegame/JoshSpaceGameClient03.zip" target="_blank" download>Space Game Client 03</a>
+				<br>
+				<a href="http://34.194.108.205/spacegame/JoshSpaceGameServer03.zip" target="_blank" download>Space Game Server 03</a>
+			</p>
+			<br>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
