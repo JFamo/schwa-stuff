@@ -82,6 +82,16 @@
 	padding-top: 10px;
 }
 
+.bodyText1List{
+	color: black;
+	font-size: 20px;
+	font-weight: 400px;
+	font-family: 'Roboto', sans-serif;
+	padding-left: 80px;
+	padding-right: 40px;
+	padding-top: 10px;
+}
+
 .sidebarItem{
 	font-family: 'Kanit', sans-serif;
 	color: white;
