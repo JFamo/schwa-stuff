@@ -109,7 +109,7 @@
 }
 
 .sidebarItem:hover, .sidebarItem:active {
-	background-color: #f50649;
+	background-color: #185153;
 }
 
 .bodyText{
@@ -120,4 +120,30 @@
 	float: left;
 	padding-left: 20px;
 	padding-top: 20px;
+}
+
+.playButton{
+	font-family: 'Kanit', sans-serif;
+	color: white;
+	font-weight: 600;
+	font-size: auto;
+	margin-top: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	letter-spacing: 1px;
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-color: #0E4749;
+}
+
+.playButton:hover, .sidebarItem:active {
+	background-color: #185153;
 }

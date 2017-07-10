@@ -8,6 +8,7 @@ function sidebarToggle(){
   document.getElementById("sidebarLinkMain").href = "index.html";
   document.getElementById("sidebarLinkContact").href = "contact.html";
   document.getElementById("sidebarLinkCodeMagic").href = "codemagic.html";
+  document.getElementById("sidebarLinkGolf").href = "golfanywhere.html";
 
 	//check the action, and start that action
 	if(document.getElementById("sidebar").style.display == "none"){
