@@ -4,17 +4,20 @@ function sidebarToggle(){
 	var sidebarWidth;	//current width of the sidebar
 	var contentWidth;	//current width of the content (main and titlebar)
 
+  //THIS SECTION SETS THE LINKS
+  document.getElementById("sidebarLinkMain").href = "index.html";
+
 	//check the action, and start that action
 	if(document.getElementById("sidebar").style.display == "none"){
 		openorclose = 0;
-		contentWidth = 100;
+		contentWidth = 70;
 		sidebarWidth = 0;
 		var intervalId = setInterval(sidebarOpen,10);
   	}
   	else{
   		openorclose = 1;
-  		contentWidth = 75;
-		sidebarWidth = 25;
+  		contentWidth = 50;
+		  sidebarWidth = 20;
   		var intervalId = setInterval(sidebarClose,10);
   	}
 
@@ -32,11 +35,11 @@ function sidebarToggle(){
   		//perform actions
   		document.getElementById("main").style.width = contentWidth + '%';
   		document.getElementById("titlebar").style.width = contentWidth + '%';
-  		document.getElementById("main").style.marginLeft = sidebarWidth + '%';
-  		document.getElementById("titlebar").style.marginLeft = sidebarWidth + '%';
+  		document.getElementById("main").style.marginLeft = (sidebarWidth+10) + '%';
+  		document.getElementById("titlebar").style.marginLeft = (sidebarWidth+10) + '%';
   		document.getElementById("sidebar").style.width = sidebarWidth + '%';
   		//check animation end
-  		if(sidebarWidth == 25){
+  		if(sidebarWidth == 20){
   			clearInterval(intervalId);
   		}
   	}
@@ -48,8 +51,8 @@ function sidebarToggle(){
   		//perform actions
   		document.getElementById("main").style.width = contentWidth + '%';
   		document.getElementById("titlebar").style.width = contentWidth + '%';
-  		document.getElementById("main").style.marginLeft = sidebarWidth + '%';
-  		document.getElementById("titlebar").style.marginLeft = sidebarWidth + '%';
+  		document.getElementById("main").style.marginLeft = (sidebarWidth+10) + '%';
+  		document.getElementById("titlebar").style.marginLeft = (sidebarWidth+10) + '%';
   		document.getElementById("sidebar").style.width = sidebarWidth + '%';
   		//check animation end
   		if(sidebarWidth == 0){
