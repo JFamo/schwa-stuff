@@ -18,10 +18,11 @@ function sidebarToggle(){
         Games
       </p>
       <a href="golfanywhere.html" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
+      <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
       <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
       <a href="planeevolution.html" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
       <a href="spacegame.html" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
-      <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
+      
       <p class="sidebarText1">
         Software
       </p>
