@@ -30,7 +30,7 @@ function sidebarToggle(){
         Others
       </p>
       <a href="shaqfont.html" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
-      <a href="#" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
+      <a href="halo.html" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
     <center>
   </div>`;
 
