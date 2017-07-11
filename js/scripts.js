@@ -21,16 +21,15 @@ function sidebarToggle(){
       <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
       <a href="planeevolution.html" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
       <a href="spacegame.html" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
-      <a href="#" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
+      <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
       <p class="sidebarText1">
         Software
       </p>
-      <a href="#" class="sidebarItem" id="sidebarLinkBXD">Bitwise XOR Decryptor</a>
+      <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
       <p class="sidebarText1">
         Others
       </p>
-      <a href="#" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
-      <a href="#" class="sidebarItem" id="sidebarLinkSupremacy">Supremacy</a>
+      <a href="shaqfont.html" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
       <a href="#" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
     <center>
   </div>`;
@@ -68,6 +67,7 @@ function sidebarToggle(){
   		document.getElementById("sidebar").style.width = sidebarWidth + '%';
   		//check animation end
   		if(sidebarWidth == 20){
+        document.getElementById('sidebar').style.height = (document.getElementById('main').offsetHeight + 190) + 'px';
   			clearInterval(intervalId);
   		}
   	}
