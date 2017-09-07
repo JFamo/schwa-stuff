@@ -22,11 +22,14 @@ function sidebarToggle(){
       <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
       <a href="planeevolution.html" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
       <a href="spacegame.html" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
-      
       <p class="sidebarText1">
         Software
       </p>
       <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
+      <p class="sidebarText1">
+        Opinions
+      </p>
+      <a href="blog1.html" class="sidebarItem" id="sidebarLinkPresenter">The Presenter's Dilemma</a>
       <p class="sidebarText1">
         Others
       </p>
