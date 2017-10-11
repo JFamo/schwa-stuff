@@ -17,6 +17,7 @@ function sidebarToggle(){
       <p class="sidebarText1">
         Games
       </p>
+      <a href="polo.html" class="sidebarItem" id="sidebarLinkGolf">Polo Demo</a>
       <a href="golfanywhere.html" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
       <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
       <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
@@ -26,6 +27,7 @@ function sidebarToggle(){
         Software
       </p>
       <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
+      <a href="http://chaptersweet.x10host.com" class="sidebarItem" id="sidebarLinkBXD" target="_blank">ChapterSweet</a>
       <p class="sidebarText1">
         Opinions
       </p>
