@@ -78,7 +78,36 @@
 			</p>
 
 			<p class="bodyText1">
-				Be a horse-riding club-swinging ball-chasing polo player in our solution to this year's TSA Video Game Design challenge. Join in the glitchy multiplayer fun of batting a ball towards a goal, now with your friends. Choose a name, create or join a game, and score meaningless points!
+				Fight in an arena polo-style to score goals against online opponents in our solution to this year's TSA Video Game Design challenge. Join in the multiplayer fun of batting a ball towards a goal, now with your friends. Choose a name, one of seven characters, create or join a game, and score points to earn coins! Then, unlock new characters in the Shop using those coins to dominate the competition!
+			</p>
+			<br>
+
+			<p class="subtitleText2">
+				Characters
+			</p>
+
+			<p class="bodyText1">
+				<b>Polo Player</b><br>
+				The basic polo player rides a horse and swings a club, and has average stats.<br>
+				Their club attack has a short range and moderate strength.<br>
+				<b>Xtra Terrestrial</b><br>
+				The spaceship character is fast, but is slow to turn and accelerate.<br>
+				When holding down LMB, they activate a tractor beam which slowly pulls the ball towards them.<br>
+				<b>PoloPro3000</b><br>
+				The robot character has average stats.<br>
+				Their attack shoots a lazer projectile, that strongly deflects the ball when hitting it.<br>
+				<b>General Hartmann</b><br>
+				The tank character has a slow speed and turning rate, but powerful fire.<br>
+				Their attack shoots a large slow bullet, that very strongly deflects the ball when hitting it.<br>
+				<b>Oof</b><br>
+				Oof is a dinosaur-riding caveman with a club and average stats.<br>
+				Oof's club-swing is more effective than the generic Polo Player at hitting the ball away.<br>
+				<b>-classified-</b><br>
+				This information has been redacted in the interest of national security.<br>
+				--- --- --- - --------- ---- -- ---- --- ---- ------- ------- ---- -----.<br>
+				<b>Polo Man</b><br>
+				Polo Man is a extremely agile polo-playing superhero.<br>
+				Polo Man can punch the ball with incredible strength.<br>
 			</p>
 			<br>
 
@@ -89,7 +118,7 @@
 			<p class="bodyText1">
 				<ul class="bodyText1List">
 					<li>WAD 			    : Move Player</li>
-					<li>Left Mouse Button   : Shoot</li>
+					<li>Left Mouse Button   : Attack</li>
 				</ul>
 			</p>
 
@@ -97,6 +126,98 @@
 				Changelog
 			</p>
 
+			<p class="bodyText1">
+				Version 0.2.6<br>
+				11/29/2017
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Contain Ball when too High</li>
+					<li>Pop-up in Store for Insuffecient Coins</li>
+					<li>Added -classified- Spy Character</li>
+					<li>Added Polo Man Superhero Character</li>
+					<li>Rewrote Projectile RPC for Increased Code Reusability</li>
+					<li>Changed Projectile Collisions - (ball now moves in same direction as projectile, instead of simply deflecting away from the oncoming projectile)</li>
+					<li>Temporarily Decreased Starting Currency to 300</li>
+					<li>Decreased Costs by 100 coins</li>
+				</ul>
+			</p>
+				<br><br>
+			<p class="bodyText1">
+				Version 0.2.5<br>
+				11/28/2017
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Added Store</li>
+					<li>Added Options</li>
+					<li>Made Quit Button on Title Screen Work</li>
+					<li>Added Back Buttons to Shop, Options, and Room List</li>
+					<li>Added Use of Escape Key to Quit Lobby or Game</li>
+					<li>Added Currency Display in Shop</li>
+					<li>Added Oof Caveman Character</li>
+					<li>Added General Hartmann Tank Character</li>
+					<li>Added Purchasing Characters in Shop</li>
+					<li>Temporarily Increased Starting Currency to 375</li>
+					<li>Made Character Selection Dropdown Dynamic</li>
+					<li>Lowered General Hartmann's Turning Rate</li>
+					<li>Created New Projectile Behavior</li>
+					<li>Changed Shop Scroll from Unrestricted to Elastic</li>
+					<li>Bug Fixes</li>
+				</ul>
+			</p>
+				<br><br>
+			<p class="bodyText1">
+				Version 0.2.3<br>
+				11/27/2017
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Updated All Menus</li>
+					<li>Font Change</li>
+					<li>Added Quit Button</li>
+					<li>Added Robot Lazer Attack</li>
+					<li>Added Spaceship Tractor Beam Attack</li>
+				</ul>
+			</p>
+				<br><br>
+			<p class="bodyText1">
+				Version 0.2.2<br>
+				11/26/2017
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Title Screen</li>
+					<li>Victory Screen</li>
+					<li>Added Score</li>
+					<li>Added HUD with Score</li>
+					<li>Win/Loss at 7 Points</li>
+					<li>Added Coins</li>
+					<li>Removed ESC to Quit</li>
+					<li>Bug Fixes</li>
+					<li>Performance Updates</li>
+					<li>Removed Goal Post Colliders</li>
+					<li>Respawning Ball if Knocked Out</li>
+				</ul>
+			</p>
+				<br><br>
+			<p class="bodyText1">
+				Version 0.2.0
+				<br><br>
+				<ul class="bodyText1List">
+					<li>Lobby Menu</li>
+					<li>Frequent Room and Lobby Refreshing</li>
+					<li>Moved Name Choice to Lobby</li>
+					<li>Added Teams (Blue vs Red)</li>
+					<li>Added Custom Player Property for Team</li>
+					<li>Changing Name Color to Team</li>
+					<li>Multiple Spawn Points</li>
+					<li>Remote Procedure Call for Character Selection</li>
+					<li>Character Selection on Lobby</li>
+					<li>Update Player Stats on Game Start</li>
+					<li>Added Spaceship and Robot Models</li>
+					<li>Added Lists for Character Models and Stats</li>
+					<li>Smooth Ball Movement Using PhotonSerializeView</li>
+					<li>Removed Ball Transform View</li>
+				</ul>
+			</p>
+				<br><br>
 			<p class="bodyText1">
 				Version 0.1.5
 				<br><br>
@@ -118,7 +239,8 @@
 			</p>
 				<br><br>
 			<p class="bodyText1">
-				Version 0.1.0
+				Version 0.1.0<br>
+				10/09/2017
 				<br><br>
 				<ul class="bodyText1List">
 					<li>Added Multiplayer Engine (Photon)</li>
