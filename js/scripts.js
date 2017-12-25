@@ -26,8 +26,9 @@ function sidebarToggle(){
       <p class="sidebarText1">
         Software
       </p>
-      <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
+      <a href="khan.html" class="sidebarItem" id="sidebarLink">Khan the Tetris AI</a>
       <a href="http://chaptersweet.x10host.com" class="sidebarItem" id="sidebarLinkBXD" target="_blank">ChapterSweet</a>
+      <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
       <p class="sidebarText1">
         Opinions
       </p>

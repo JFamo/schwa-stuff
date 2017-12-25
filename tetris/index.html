@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Khan</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <style>
+    body      { font-family: 'Press Start 2P', cursive; font-size:10px; }
+    #tetris   { margin: 1em auto; padding: 1em; border: 4px solid black; border-radius: 10px; background-color: #F8F8F8; }
+    #stats    { display: inline-block; vertical-align: top; }
+    #canvas   { display: inline-block; vertical-align: top; background: url(texture.jpg); box-shadow: 10px 10px 10px #999; border: 2px solid #333; }
+    #menu     { display: inline-block; vertical-align: top; position: relative; }
+    #menu p   { margin: 0.5em 0; text-align: center; }
+    #menu p a { text-decoration: none; color: black; }
+    #upcoming { display: block; margin: 0 auto; background-color: #E0E0E0; }
+    #score    { font-family: 'Press Start 2P', cursive; color: red; font-weight: bold; vertical-align: middle; }
+    #highscore{ font-family: 'Press Start 2P', cursive; color: red; font-weight: bold; vertical-align: middle; }
+    #rows     { font-family: 'Press Start 2P', cursive; color: blue; font-weight: bold; vertical-align: middle; }
+    #level     { font-family: 'Press Start 2P', cursive; color: blue; font-weight: bold; vertical-align: middle; }
+    #lines    { font-family: 'Press Start 2P', cursive; color: green; font-weight: bold; vertical-align: middle; }
+    #show     { font-family: 'Press Start 2P', cursive; cursor:pointer; color: blue; font-size:14px; vertical-align: middle; }
+    #details  { font-family: 'Press Start 2P', cursive; display:none; color: black; font-size:8px; vertical-align: middle; }
+    #stats    { position: absolute; bottom: 0em; right: 1em; }
+    @media screen and (min-width:   0px) and (min-height:   0px)  { #tetris { font-size: 0.75em; width: 250px; } #menu { width: 100px; height: 200px; } #upcoming { width:  50px; height:  50px; } #canvas { width: 100px; height: 200px; } } /* 10px chunks */
+    @media screen and (min-width: 400px) and (min-height: 400px)  { #tetris { font-size: 1.00em; width: 350px; } #menu { width: 150px; height: 300px; } #upcoming { width:  75px; height:  75px; } #canvas { width: 150px; height: 300px; } } /* 15px chunks */
+    @media screen and (min-width: 500px) and (min-height: 500px)  { #tetris { font-size: 1.25em; width: 450px; } #menu { width: 200px; height: 400px; } #upcoming { width: 100px; height: 100px; } #canvas { width: 200px; height: 400px; } } /* 20px chunks */
+    @media screen and (min-width: 600px) and (min-height: 600px)  { #tetris { font-size: 1.50em; width: 550px; } #menu { width: 250px; height: 500px; } #upcoming { width: 125px; height: 125px; } #canvas { width: 250px; height: 500px; } } /* 25px chunks */
+    @media screen and (min-width: 700px) and (min-height: 700px)  { #tetris { font-size: 1.75em; width: 650px; } #menu { width: 300px; height: 600px; } #upcoming { width: 150px; height: 150px; } #canvas { width: 300px; height: 600px; } } /* 30px chunks */
+    @media screen and (min-width: 800px) and (min-height: 800px)  { #tetris { font-size: 2.00em; width: 750px; } #menu { width: 350px; height: 700px; } #upcoming { width: 175px; height: 175px; } #canvas { width: 350px; height: 700px; } } /* 35px chunks */
+    @media screen and (min-width: 900px) and (min-height: 900px)  { #tetris { font-size: 2.25em; width: 850px; } #menu { width: 400px; height: 800px; } #upcoming { width: 200px; height: 200px; } #canvas { width: 400px; height: 800px; } } /* 40px chunks */
+  </style>
+</head>
+
+<body>
+
+  <div id="tetris">
+    <div id="menu">
+      <p id="start"><a href="javascript:play();">Press Space to Play.</a></p>
+      <p><canvas id="upcoming"></canvas></p>
+      <p>Score <span id="score">0000000</span></p>
+      <p>Highscore <span id="highscore">0000000</span></p>
+      <p>Rows <span id="rows">0</span></p>
+      <p>Level <span id="level">1</span></p>
+      <p><span id="lines"></span></p>
+      <br>
+      <p><span id="show" onclick="showMore();">Show More</span></p>
+      <p><span id="details"></span></p>
+    </div>
+    <canvas id="canvas">
+      Sorry, this example cannot be run because your browser does not support the &lt;canvas&gt; element
+    </canvas>
+  </div>
+
+  <script src="stats.js"></script>
+  <script>
+
+    //-------------------------------------------------------------------------
+    // base helper methods
+    //-------------------------------------------------------------------------
+
+    function get(id)        { return document.getElementById(id);  }
+    function hide(id)       { get(id).style.visibility = 'hidden'; }
+    function show(id)       { get(id).style.visibility = null;     }
+    function html(id, html) { get(id).innerHTML = html;            }
+
+    function timestamp()           { return new Date().getTime();                             }
+    function random(min, max)      { return (min + (Math.random() * (max - min)));            }
+    function randomChoice(choices) { return choices[Math.round(random(0, choices.length-1))]; }
+
+    if (!window.requestAnimationFrame) { // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+      window.requestAnimationFrame = window.webkitRequestAnimationFrame ||
+                                     window.mozRequestAnimationFrame    ||
+                                     window.oRequestAnimationFrame      ||
+                                     window.msRequestAnimationFrame     ||
+                                     function(callback, element) {
+                                       window.setTimeout(callback, 1000 / 60);
+                                     }
+    }
+
+    //-------------------------------------------------------------------------
+    // game constants
+    //-------------------------------------------------------------------------
+
+    var KEY     = { ESC: 27, SPACE: 32, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 },
+        DIR     = { UP: 0, RIGHT: 1, DOWN: 2, LEFT: 3, MIN: 0, MAX: 3 },
+        stats   = new Stats(),
+        canvas  = get('canvas'),
+        ctx     = canvas.getContext('2d'),
+        ucanvas = get('upcoming'),
+        uctx    = ucanvas.getContext('2d'),
+        speed   = { start: 0.6, decrement: 0.005, min: 0.005 }, // how long before piece drops by 1 row (seconds)
+        nx      = 10, // width of tetris court (in blocks)
+        ny      = 20, // height of tetris court (in blocks)
+        nu      = 5,  // width/height of upcoming preview (in blocks)
+        populationID = 2;  // track the ID of the current population member, to increment
+
+    //-------------------------------------------------------------------------
+    // game variables (initialized during reset)
+    //-------------------------------------------------------------------------
+
+    var dx, dy,        // pixel size of a single tetris block
+        blocks,        // 2 dimensional array (nx*ny) representing tetris court - either empty block or occupied by a 'piece'
+        fakeblocks,    // identical to blocks, but isn't actually updated to the screen
+        actions,       // queue of user actions (inputs)
+        playing,       // true|false - game is in progress
+        dt,            // time since starting this game
+        current,       // the current piece
+        next,          // the next piece
+        score,         // the current score
+        highScore = 0, // the high score
+        vscore,        // the currently displayed score (it catches up to score in small chunks - like a spinning slot machine)
+        rows,          // number of completed rows in the current game
+        step,          // how long before current piece drops by 1 row
+        vector_a = 5,      // heuristic for aggregate height
+        vector_b = 5,      // heuristic for complete lines
+        vector_c = 5,      // heuristic for holes
+        vector_d = 5,      // heuristic for bumpiness
+        level = 1;        //for nullpo scoring
+
+
+    //-------------------------------------------------------------------------
+    // tetris pieces
+    //
+    // blocks: each element represents a rotation of the piece (0, 90, 180, 270)
+    //         each element is a 16 bit integer where the 16 bits represent
+    //         a 4x4 set of blocks, e.g. j.blocks[0] = 0x44C0
+    //
+    //             0100 = 0x4 << 3 = 0x4000
+    //             0100 = 0x4 << 2 = 0x0400
+    //             1100 = 0xC << 1 = 0x00C0
+    //             0000 = 0x0 << 0 = 0x0000
+    //                               ------
+    //                               0x44C0
+    //
+    //-------------------------------------------------------------------------
+
+    var a = { size: 4, blocks: [0x4E40, 0x4E40, 0x4E40, 0x4E40], color: 'pink'   };
+    var b = { size: 4, blocks: [0x0F00, 0x2222, 0x00F0, 0x4444], color: 'cyan'   };
+    var c = { size: 3, blocks: [0x44C0, 0x8E00, 0x6440, 0x0E20], color: 'blue'   };
+    var d = { size: 3, blocks: [0x4460, 0x0E80, 0xC440, 0x2E00], color: 'orange' };
+    var e = { size: 2, blocks: [0xCC00, 0xCC00, 0xCC00, 0xCC00], color: 'yellow' };
+    var f = { size: 3, blocks: [0x06C0, 0x8C40, 0x6C00, 0x4620], color: 'green'  };
+    var g = { size: 3, blocks: [0x0E40, 0x4C40, 0x4E00, 0x4640], color: 'purple' };
+    var h = { size: 3, blocks: [0x0C60, 0x4C80, 0xC600, 0x2640], color: 'red'    };
+    var i = { size: 3, blocks: [0x4A00, 0x8480, 0xA400, 0x4840], color: 'brown'  };
+    var j = { size: 2, blocks: [0xC000, 0x4400, 0xC00, 0x8800],  color: 'yellow'  };
+    var k = { size: 1, blocks: [0x8000, 0x8000, 0x8000, 0x8000], color: 'cyan'  };
+    var l = { size: 3, blocks: [0xAE00, 0xC8C0, 0xEA00, 0x6260], color: 'orange'  };
+    var m = { size: 3, blocks: [0xEC00, 0xCC40, 0x6E00, 0x8CC0], color: 'green'  };
+    var n = { size: 3, blocks: [0xCE00, 0xCC80, 0xE600, 0x4CC0], color: 'purple'  };
+    var o = { size: 4, blocks: [0xA4A0, 0xA4A0, 0xA4A0, 0xA4A0], color: 'red'   };
+    var p = { size: 4, blocks: [0x6F00, 0x8CC8, 0xF600, 0x4CC4], color: 'blue'   };
+    var q = { size: 2, blocks: [0x8400, 0x4800, 0x8400, 0x4800], color: 'pink'   };
+    var r = { size: 3, blocks: [0x4880, 0xC200, 0x4480, 0x8600], color: 'brown'   };
+    var s = { size: 3, blocks: [0x8440, 0x2C00, 0x8840, 0x6800], color: 'red'   };
+    var t = { size: 2, blocks: [0x4C00, 0x8C00, 0xC800, 0xC400], color: 'orange'   };
+    var u = { size: 3, blocks: [0xE440, 0x8E80, 0x44E0, 0x2E20], color: 'yellow'   };
+    var v = { size: 4, blocks: [0x9F00, 0xC88C, 0xF900, 0xC44C], color: 'green'   };
+
+    //------------------------------------------------
+    // do the bit manipulation and iterate through each
+    // occupied block (x,y) for a given piece
+    //------------------------------------------------
+    function eachblock(type, x, y, dir, fn) {
+      var bit, result, row = 0, col = 0, blocks = type.blocks[dir];
+      for(bit = 0x8000 ; bit > 0 ; bit = bit >> 1) {
+        if (blocks & bit) {
+          fn(x + col, y + row);
+        }
+        if (++col === 4) {
+          col = 0;
+          ++row;
+        }
+      }
+    }
+
+    //-----------------------------------------------------
+    // check if a piece can fit into a position in the grid
+    //-----------------------------------------------------
+    function occupied(type, x, y, dir) {
+      var result = false
+      eachblock(type, x, y, dir, function(x, y) {
+        if ((x < 0) || (x >= nx) || (y < 0) || (y >= ny) || getBlock(x,y))
+          result = true;
+      });
+      return result;
+    }
+
+    function unoccupied(type, x, y, dir) {
+      return !occupied(type, x, y, dir);
+    }
+
+    function fakeOccupied(type, x, y, dir) {
+      var result = false
+      eachblock(type, x, y, dir, function(x, y) {
+        if ((x < 0) || (x >= nx) || (y < 0) || (y >= ny) || getFakeBlock(x,y))
+          result = true;
+      });
+      return result;
+    }
+
+    function fakeUnoccupied(type, x, y, dir) {
+      return !fakeOccupied(type, x, y, dir);
+    }
+
+    //-----------------------------------------
+    // start with 4 instances of each piece and
+    // pick randomly until the 'bag is empty'
+    //-----------------------------------------
+    var pieces = [];
+    function randomPiece() {
+      if (pieces.length == 0)
+        pieces = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v];//[i,i,i,i,j,j,j,j,l,l,l,l,o,o,o,o,s,s,s,s,t,t,t,t,z,z,z,z,v,v,v,v,q,q,q,q];
+      var type = pieces.splice(random(0, pieces.length-1), 1)[0];
+      return { type: type, dir: DIR.UP, x: (nx/2) - 1, y: 0 };
+    }
+
+    //-------------------------------------------------------------------------
+    // JONATHAN GAMEPLAY
+    //-------------------------------------------------------------------------
+
+    var bestMoveScore = -1000;
+    var bestMoveChange = 0;
+    var bestMoveDir = 0;
+
+    function findMove(){
+      bestMoveScore = -100000;
+      bestMoveChange = 0;
+      bestMoveDir = 0;
+      //for each column
+      for(var possible_col = -2; possible_col < 10; possible_col++){
+        //for each rotation
+        for(var possible_rot = 0; possible_rot < 4; possible_rot++){
+          //if this is a possible move
+          if(unoccupied(current.type, possible_col, lowestPoint(current.type, possible_col, possible_rot), possible_rot)){
+            //for each column
+            for(var possible_col2 = -2; possible_col2 < 10; possible_col2++){
+              //for each rotation
+              for(var possible_rot2 = 0; possible_rot2 < 4; possible_rot2++){
+                //if this is a possible move
+                if(unoccupied(next.type, possible_col2, lowestPoint(next.type, possible_col2, possible_rot2), possible_rot2)){
+                  var thisScore = 0;
+                  //create a temporary false grid
+                  fakeblocks = JSON.parse(JSON.stringify(blocks));
+                  //remove the current piece from its falling position
+                  eachblock(current.type, current.x, current.y, current.dir, function(x, y) {
+                    setFakeBlock(x, y, null);
+                  });
+                  //place the current piece where it will lay
+                  eachblock(current.type, possible_col, fakeLowestPoint(current.type, possible_col, possible_rot), possible_rot, function(x, y) {
+                    setFakeBlock(x, y, current.type);
+                  });
+                  //place the next piece where it will lay
+                  eachblock(next.type, possible_col2, fakeLowestPoint(next.type, possible_col2, possible_rot2), possible_rot2, function(x, y) {
+                    setFakeBlock(x, y, next.type);
+                  });
+                  //calculate score of this move
+                  thisScore = (vector_a * GetAggregateHeight()) + (vector_b * GetCompleteLines()) + (vector_c * GetHoles()) + (vector_d * GetBumpiness());
+                  //if this is the best one, update the stats
+                  if(thisScore > bestMoveScore){
+                    bestMoveScore = thisScore;
+                    bestMoveChange = possible_col - current.x;
+                    bestMoveDir = possible_rot;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    function makeMove(){
+      //make the best move
+      if(current.dir != bestMoveDir){
+        rotate();
+      }
+      else{
+        if(bestMoveChange > 0){
+            move(DIR.RIGHT);
+            bestMoveChange --;
+        }
+        else if(bestMoveChange < 0){
+          move(DIR.LEFT);
+          bestMoveChange ++;
+        }
+        else if(bestMoveChange == 0){
+          move(DIR.DOWN);
+        }
+      }
+    }
+
+    function GetColHeight(col_check){
+      var high = 0;
+      //find the highest 
+      for(var row = 19; row >= 0; row--){
+        if(getFakeBlock(col_check, row) != null){
+          high = row;
+        }
+      }
+      return (19-high);
+    }
+
+    function GetAggregateHeight(){
+      var agg_height = 0;
+      //for each column
+      for(var col_check = 0; col_check < 10; col_check++){
+        agg_height += GetColHeight(col_check);
+      }
+      return agg_height;
+    }
+
+    function GetCompleteLines(){
+      var complete_lines = 0;
+      //for each row
+      for(var row = 0; row < 20; row++){
+        var comp_cols = 0;
+        //for each column
+        for(var col_check = 0; col_check < 10; col_check++){
+          if(getFakeBlock(col_check, row) != null){
+            comp_cols += 1;
+          }
+        }
+        if(comp_cols >= 10){
+          complete_lines += 1;
+        }
+      }
+      return complete_lines;
+    }
+
+    function GetBumpiness(){
+      var bumpiness = 0;
+      //for each column
+      for(var col = 0; col < 9; col++){
+        bumpiness += Math.abs( GetColHeight(col) - GetColHeight(col+1) );
+      }
+      return bumpiness;
+    }
+
+    function GetHoles(){
+      var holes = 0;
+      //for each column
+      for(var col = 0; col < 10; col++){
+        //for each row going up
+        for(var row = 19; row >= 0; row--){
+          //if this is empty
+          if(getFakeBlock(col, row) == null){
+            //for each row above this
+            for(var row2 = row; row2 >= 0; row2--){
+              //if a cell above me is NOT empty
+              if(getFakeBlock(col, row2) != null){
+                holes ++;
+              }
+            }
+          }
+        }
+      }
+      return holes;
+    }
+
+    function lowestPoint(type, col, rot){
+      var lowY = 0;
+      while(unoccupied(type, col, lowY, rot)){
+        lowY += 1;
+      }
+      return lowY - 1;
+    }
+
+    function fakeLowestPoint(type, col, rot){
+      var lowY = 0;
+      while(fakeUnoccupied(type, col, lowY, rot)){
+        lowY += 1;
+      }
+      return (lowY - 1);
+    }
+
+    //-------------------------------------------------------------------------
+    // JONATHAN GENETIC ALGORITHM
+    //-------------------------------------------------------------------------
+    var population = [];
+    population[0] = {'score':100000, 'vectora':-0.557, 'vectorb':1.212, 'vectorc':-0.109, 'vectord':-0.309};
+    population[1] = {'score':25000, 'vectora':-0.222, 'vectorb':1.091, 'vectorc':-0.200, 'vectord':-0.211};
+
+    function newIndividual(){
+      var data = getFittest();
+      var combinedScore = data['firstScore'] + data['secondScore'];
+      var first = data['first'];
+      var second = data['second'];
+      vector_a = ( (data['firstScore'] / combinedScore) * first['vectora'] ) + ( (data['secondScore'] / combinedScore) * second['vectora'] );
+      vector_b = ( (data['firstScore'] / combinedScore) * first['vectorb'] ) + ( (data['secondScore'] / combinedScore) * second['vectorb'] );
+      vector_c = ( (data['firstScore'] / combinedScore) * first['vectorc'] ) + ( (data['secondScore'] / combinedScore) * second['vectorc'] );
+      vector_d = ( (data['firstScore'] / combinedScore) * first['vectord'] ) + ( (data['secondScore'] / combinedScore) * second['vectord'] );
+      var doMutation = Math.random();
+      if(doMutation <= 0.2){
+        vector_a += (Math.random() - 0.5)/2;
+        vector_b += (Math.random() - 0.5)/2;
+        vector_c += (Math.random() - 0.5)/2;
+        vector_d += (Math.random() - 0.5)/2;
+      }
+      console.log("Created Individual with VectorA " + vector_a + " Vector B " + vector_b + " Vector C " + vector_c + " Vector D " + vector_d );
+    }
+
+    function saveIndividual(){
+      var thisIndividual = {};
+      thisIndividual['vectora'] = vector_a;
+      thisIndividual['vectorb'] = vector_b;
+      thisIndividual['vectorc'] = vector_c;
+      thisIndividual['vectord'] = vector_d;
+      thisIndividual['score'] = score;
+      population[populationID] = thisIndividual;
+      populationID++;
+    }
+
+    function getFittest(){
+      var mostFit;
+      var secondFit;
+      var highScore = 0;
+      var secondScore = 0;
+      //for each individual
+      for(var individualID in population){
+        var individual = population[individualID];
+        //if there is a score for this individual
+        if(individual.hasOwnProperty('score')){
+          //if I am the highest score so far
+          if(individual['score'] > highScore){
+            //if there is already someone here, bump them down to second
+            if(highScore > 0){
+              secondFit = Object.assign({}, mostFit);
+              secondScore = highScore;
+            }
+            mostFit = Object.assign({}, individual);
+            highScore = individual['score'];
+          }
+          //if not, maybe I'm the second highest score so far...
+          else{
+            if(individual['score'] > secondScore){
+              secondFit = Object.assign({}, individual);
+              secondScore = individual['score'];
+            }
+          }
+        } 
+      }
+      //create a temp object to return lots of variables
+      var returnData = {'first':mostFit, 'second':secondFit, 'firstScore':highScore, 'secondScore':secondScore};
+      return returnData;
+    }
+
+    //-------------------------------------------------------------------------
+    // GAME LOOP
+    //-------------------------------------------------------------------------
+
+    function run() {
+
+      showStats(); // initialize FPS counter
+      addEvents(); // attach keydown and resize events
+
+      var last = now = timestamp();
+      function frame() {
+        now = timestamp();
+        update(Math.min(1, (now - last) / 1000.0)); // using requestAnimationFrame have to be able to handle large delta's caused when it 'hibernates' in a background or non-visible tab
+        draw();
+        stats.update();
+        last = now;
+        requestAnimationFrame(frame, canvas);
+      }
+
+      resize(); // setup all our sizing information
+      reset();  // reset the per-game variables
+      frame();  // start the first frame
+
+    }
+
+    function showStats() {
+      stats.domElement.id = 'stats';
+      get('menu').appendChild(stats.domElement);
+    }
+
+    function addEvents() {
+      document.addEventListener('keydown', keydown, false);
+      window.addEventListener('resize', resize, false);
+    }
+
+    function resize(event) {
+      canvas.width   = canvas.clientWidth;  // set canvas logical size equal to its physical size
+      canvas.height  = canvas.clientHeight; // (ditto)
+      ucanvas.width  = ucanvas.clientWidth;
+      ucanvas.height = ucanvas.clientHeight;
+      dx = canvas.width  / nx; // pixel size of a single tetris block
+      dy = canvas.height / ny; // (ditto)
+      invalidate();
+      invalidateNext();
+    }
+
+    function keydown(ev) {
+      var handled = false;
+      if (playing) {
+        switch(ev.keyCode) {
+          case KEY.LEFT:   actions.push(DIR.LEFT);  handled = true; break;
+          case KEY.RIGHT:  actions.push(DIR.RIGHT); handled = true; break;
+          case KEY.UP:     actions.push(DIR.UP);    handled = true; break;
+          case KEY.DOWN:   actions.push(DIR.DOWN);  handled = true; break;
+          case KEY.ESC:    
+            vector_a = prompt("How should I weight Aggregate Height?", vector_a);
+            vector_b = prompt("How should I weight Line Completion?", vector_b);
+            vector_c = prompt("How should I weight Number of Holes?", vector_c);
+            vector_d = prompt("How should I weight Bumpiness?", vector_d);
+            handled = true; 
+            break;
+        }
+      }
+      else if (ev.keyCode == KEY.SPACE) {
+        play();
+        handled = true;
+      }
+      if (handled)
+        ev.preventDefault(); // prevent arrow keys from scrolling the page (supported in IE9+ and all other browsers)
+    }
+
+    //-------------------------------------------------------------------------
+    // GAME LOGIC
+    //-------------------------------------------------------------------------
+
+    function play() { newIndividual(); hide('start'); reset();          playing = true;  }
+    function lose() { if(score > highScore){drawHighScore()} saveIndividual(); show('start'); setVisualScore(); playing = false; play(); }
+
+    function setVisualScore(n)      { vscore = n || score; invalidateScore(); }
+    function setScore(n)            { score = n; setVisualScore(n);  }
+    function addScore(n)            { score = score + n;   }
+    function clearScore()           { setScore(0); }
+    function clearRows()            { setRows(0); }
+    function setRows(n)             { rows = n; step = Math.max(speed.min, speed.start - (speed.decrement*rows)); invalidateRows(); }
+    function addRows(n)             { setRows(rows + n); }
+    function getBlock(x,y)          { return (blocks && blocks[x] ? blocks[x][y] : null); }
+    function setBlock(x,y,type)     { blocks[x] = blocks[x] || []; blocks[x][y] = type; invalidate(); }
+    function setFakeBlock(x,y,type) { fakeblocks[x] = fakeblocks[x] || []; fakeblocks[x][y] = type; }
+    function getFakeBlock(x,y)      { return (fakeblocks && fakeblocks[x] ? fakeblocks[x][y] : null); }
+    function clearBlocks()          { blocks = []; invalidate(); }
+    function clearActions()         { actions = []; }
+    function setCurrentPiece(piece) { current = piece || randomPiece(); invalidate();     }
+    function setNextPiece(piece)    { next    = piece || randomPiece(); invalidateNext(); }
+
+    function reset() {
+      dt = 0;
+      level = 0;
+      clearActions();
+      clearBlocks();
+      clearRows();
+      clearScore();
+      setCurrentPiece(next);
+      setNextPiece();
+    }
+
+    function update(idt) {
+      if (playing) {
+        if (vscore < score)
+          setVisualScore(vscore + 1);
+        if(score > highScore){
+          drawHighScore()
+        }
+        //makeMove();
+        handle(actions.shift());
+        dt = dt + idt;
+        if (dt > step) {
+          dt = dt - step;
+          drop();
+        }
+      }
+    }
+
+    function handle(action) {
+      switch(action) {
+        case DIR.LEFT:  move(DIR.LEFT);  break;
+        case DIR.RIGHT: move(DIR.RIGHT); break;
+        case DIR.UP:    rotate();        break;
+        case DIR.DOWN:  drop(); addScore(1); break;
+      }
+    }
+
+    function move(dir) {
+      var x = current.x, y = current.y;
+      switch(dir) {
+        case DIR.RIGHT: x = x + 1; break;
+        case DIR.LEFT:  x = x - 1; break;
+        case DIR.DOWN:  y = y + 1; break;
+      }
+      if (unoccupied(current.type, x, y, current.dir)) {
+        current.x = x;
+        current.y = y;
+        invalidate();
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    function rotate() {
+      var newdir = (current.dir == DIR.MAX ? DIR.MIN : current.dir + 1);
+      if (unoccupied(current.type, current.x, current.y, newdir)) {
+        current.dir = newdir;
+        invalidate();
+      }
+    }
+
+    function drop() {
+      if (!move(DIR.DOWN)) {
+        dropPiece();
+        drawLineComplete("");
+        removeLines();
+        setCurrentPiece(next);
+        setNextPiece(randomPiece());
+        clearActions();
+        if (occupied(current.type, current.x, current.y, current.dir)) {
+          lose();
+        }
+        else{
+          findMove();
+        }
+      }
+    }
+
+    function dropPiece() {
+      eachblock(current.type, current.x, current.y, current.dir, function(x, y) {
+        setBlock(x, y, current.type);
+      });
+    }
+
+    function removeLines() {
+      var x, y, complete, n = 0;
+      for(y = ny ; y > 0 ; --y) {
+        complete = true;
+        for(x = 0 ; x < nx ; ++x) {
+          if (!getBlock(x, y))
+            complete = false;
+        }
+        if (complete) {
+          removeLine(y);
+          y = y + 1; // recheck same line
+          n++;
+        }
+      }
+      if (n > 0) {
+        addRows(n);
+        //do level increments
+        level = Math.floor(rows/15) + 1;
+        drawLevel();
+        var inc = level*(100*Math.pow(2,n-1));
+        addScore(inc); // 1: 100, 2: 200, 3: 400, 4: 800
+        switch(100*Math.pow(2,n-1)){
+          case 100:
+            drawLineComplete("Single! +" + inc);
+            break;
+          case 200:
+            drawLineComplete("Double! +" + inc);
+            break;
+          case 400:
+            drawLineComplete("Triple! +" + inc);
+            break;
+          case 800:
+            drawLineComplete("Tetris! +" + inc);
+            break;
+        }
+      }
+    }
+
+    function removeLine(n) {
+      var x, y;
+      for(y = n ; y >= 0 ; --y) {
+        for(x = 0 ; x < nx ; ++x)
+          setBlock(x, y, (y == 0) ? null : getBlock(x, y-1));
+      }
+    }
+
+    //-------------------------------------------------------------------------
+    // RENDERING
+    //-------------------------------------------------------------------------
+
+    var invalid = {};
+
+    function invalidate()         { invalid.court  = true; }
+    function invalidateNext()     { invalid.next   = true; }
+    function invalidateScore()    { invalid.score  = true; }
+    function invalidateRows()     { invalid.rows   = true; }
+
+    function draw() {
+      ctx.save();
+      ctx.lineWidth = 1;
+      ctx.translate(0.5, 0.5); // for crisp 1px black lines
+      drawCourt();
+      drawNext();
+      drawScore();
+      drawRows();
+      ctx.restore();
+    }
+
+    function drawCourt() {
+      if (invalid.court) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (playing)
+          drawPiece(ctx, current.type, current.x, current.y, current.dir);
+        var x, y, block;
+        for(y = 0 ; y < ny ; y++) {
+          for (x = 0 ; x < nx ; x++) {
+            if (block = getBlock(x,y))
+              drawBlock(ctx, x, y, block.color);
+          }
+        }
+        ctx.strokeRect(0, 0, nx*dx - 1, ny*dy - 1); // court boundary
+        invalid.court = false;
+      }
+    }
+
+    function drawNext() {
+      if (invalid.next) {
+        var padding = (nu - next.type.size) / 2; // half-arsed attempt at centering next piece display
+        uctx.save();
+        uctx.translate(0.5, 0.5);
+        uctx.clearRect(0, 0, nu*dx, nu*dy);
+        drawPiece(uctx, next.type, padding, padding, next.dir);
+        uctx.strokeStyle = 'black';
+        uctx.strokeRect(0, 0, nu*dx - 1, nu*dy - 1);
+        uctx.restore();
+        invalid.next = false;
+      }
+    }
+
+    function drawScore() {
+        html('score', ("0000000" + Math.floor(score)).slice(-7));
+    }
+
+    function drawHighScore() {
+        html('highscore', ("0000000" + Math.floor(score)).slice(-7));
+        highScore = score;
+    }
+
+    function drawLineComplete(word) {
+        html('lines', word);
+    }
+
+    function drawLevel() {
+        html('level', level);
+    }
+
+    function drawRows() {
+      if (invalid.rows) {
+        html('rows', rows);
+        invalid.rows = false;
+      }
+    }
+
+    function drawPiece(ctx, type, x, y, dir) {
+      eachblock(type, x, y, dir, function(x, y) {
+        drawBlock(ctx, x, y, type.color);
+      });
+    }
+
+    function drawBlock(ctx, x, y, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x*dx, y*dy, dx, dy);
+      ctx.strokeRect(x*dx, y*dy, dx, dy)
+    }
+
+    function showMore(){
+      var deets = document.getElementById('details');
+      drawDetails();
+      if(deets.style.display === 'none'){
+        html('show', "Show Less");
+        deets.style.display = 'block';
+      }
+      else{
+        html('show', "Show More");
+        deets.style.display = 'none';
+      }
+    }
+
+    function drawDetails(){
+      var d = getFittest();
+      html('details', "Population Size : " + population.length + "<br><br> Vector A : " + vector_a + "<br> Vector B : " + vector_b + "<br> Vector C : " + vector_c + "<br> Vector D : " + vector_d + "<br><br> My Population ID : " + populationID + "<br><br> Parent 1 Score : " + d['firstScore'] + "<br> Parent 2 Score : " + d['secondScore']);
+    }
+
+    //-------------------------------------------------------------------------
+    // FINALLY, lets run the game
+    //-------------------------------------------------------------------------
+
+    run();
+
+  </script>
+
+</body>
+</html>
