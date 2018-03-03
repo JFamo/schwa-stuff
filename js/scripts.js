@@ -17,7 +17,7 @@ function sidebarToggle(){
       <p class="sidebarText1">
         Games
       </p>
-      <a href="polo.html" class="sidebarItem" id="sidebarLinkGolf">Polo Demo</a>
+      <a href="polo.html" class="sidebarItem" id="sidebarLinkGolf">Battle Polo</a>
       <a href="golfanywhere.html" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
       <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
       <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
@@ -33,12 +33,15 @@ function sidebarToggle(){
         Opinions
       </p>
       <a href="blog1.html" class="sidebarItem" id="sidebarLinkPresenter">The Presenter's Dilemma</a>
+      <a href="blog2.html" class="sidebarItem" id="sidebarLinkDiehard">Die Hard : Not a Christmas Movie</a>
       <p class="sidebarText1">
         Others
       </p>
+      <a href="battery.html" class="sidebarItem" id="sidebarLinkBattery">Electrochemistry Project</a>
+      <a href="animation.html" class="sidebarItem" id="sidebarLinkAnimation">3D Animation</a>
+      <a href="music.html" class="sidebarItem" id="sidebarLinkMusic">Music</a>
       <a href="shaqfont.html" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
       <a href="halo.html" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
-      <a href="music.html" class="sidebarItem" id="sidebarLinkHalo">Music</a>
     <center>
   </div>`;
 
