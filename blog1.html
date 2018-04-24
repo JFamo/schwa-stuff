@@ -1,73 +1,55 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4 text-primary">Joshua Famous</h1>
+	    <p class="lead">Game Maker &#8226 Software Developer &#8226 Web Designer</p>
+	  </div>
+	</div>
 
-	<div class="wrapper">
+	<div class="container-fluid">
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
-
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
-
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
-		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
-
-			<!--
-			This image is gonzo for now
-			<img src="StatesPic.jpg" width="220" height="300" style="float:left; position:relative; top:20px; left:30px;">
-			-->
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
 			
-			<p class="subtitleText1">
-				Opinion 1 : The Presenter's Dilemma
-			</p>
+				<h1>Opinion 1 : The Presenter's Dilemma</h1>
 
-			<p class="bodyText1">
-				09/06/2017
-			</p>
-			<br>
+				<br>
 
-			<center>
-			<img src="img/lectureHall.jpg" width="100%"/>
-			</center>
+				<h5>
+					09/06/2017
+				</h5>
 
-			<p class="subtitleText2">
+				<br>
+
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+				<img src="img/lectureHall.jpg" width="100%"/>
+				</center>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+			<h3>
 				What Is It?
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				What proposition could the intellectual behind words on a webpage possibly provide me today? What's worth reading the perhaps frighteningly lengthy body of text to come? What do the words "Presenter's Dilemma" even mean? All these questions could possibly be answered below.
@@ -87,9 +69,9 @@
 				Which, when simplified, is over Two Days of collective time exhausted by a 10-minute tale. We'll assume, in this example, that since the professor enjoyed sharing his story and you enjoyed listening to it that those 20 minutes of time were not wasted.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Why Does It Matter?
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				So what?, you may be asking youself, feeling awfully unenlightened. Consider, for emphasis, another situation. This time, a situation more disastrous than a simple lecture-hall incident. An audience of 2,000 gathers for some significant occasion. Any venue for such an occasion obviously has some expectation of capacity and profecient functionality, but anyone can agree that occasionally unforseen difficulties can arise. 
@@ -101,9 +83,9 @@
 				The problem here is lost time. Wasted time. Time devoured by simple affairs which adds up to devastating capacities.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				What's So Important About Time?
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				I believe the whole of history on Earth allows me to conclude that humans are the most accomplished species, and the species that can do the most when we're given resources, motivation, time, and energy. Collectively, we've achieved success beyond measure. That's why the presenter's dilemma measures collective time. An individual man could never have built Babylon, or the Great Pyramids, or Rome or Paris or London or Boston. So yes, alone, one's time has considerably less value. When a group as large as 2,000, 300, or even 20 people is removed from a productive capacity due to the flaws of a presenter or when put at the mercy of a select few, their time is dilapidated.
@@ -115,9 +97,9 @@
 				Further still, I've found endless articles detailing skills to learn within a minute, although I'm going to assume you get the points. Humans are incredible creatures. We're capable of alot with our time. This problem - the presenter's dilemma - is a massive offender in wasting our time. The reason I'm writing this? We don't even realize it.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Why Does It Happen?
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				The presenter's dilemma is spawned out of the simple imbalance of an individual person or small group of people addressing a much larger gathering as an audience. The presenter only considers their own time, while they should be considering the collective time exhausted by the audience. The presenter is in complete control of a huge group of people, and in the wrong hands that control can lead to devastating losses.
@@ -142,9 +124,9 @@
 				Now this conclusion is an extremely large one to make, but with a 30 second sidenote, the President of the United States has spent 30 years of collective human time. That's real power right there.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				What Should We Do?
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				The plain and simple to solution to solving the presenter's dilemma is to acknowledge it, and to always strive as a presenter to balance your own interests and those of your audience. Do not assume your audience as unconditionally interested ears, bound to your voice. 
@@ -156,9 +138,9 @@
 				My practical tips would be to avoid meetings which simply review information. Seek, to the best of your ability, not to waste time repeating (anything), but instead to only review when your audience requests it. A flaw which often leads directly to the presenter's dilemma is the assumption by speakers (especially teachers and professors) that the audience wishes them to review information by default.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				In Summary
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				The presenter's dilemma is a problem we face wherein a speaker does not recognize the audience's interest in time. They consider, not out of malicious intent, but out of ignorance and the basic nature of a presenter, their time to be the primary issue. Ignorance is the problem, so as is enlightenment the solution. Always strive as a presenter to recognize the importance of your audience's collective time, no matter how insignificant it may seem to you. Practice manners when presenting, and do so effectively and with effeciency.
@@ -167,10 +149,15 @@
 				<br><br>
 			</p>
 
+			<br><br>
+				
+			</div>
 		</div>
-
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>

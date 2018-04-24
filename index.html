@@ -1,115 +1,287 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4 text-primary">Joshua Famous</h1>
+	    <p class="lead">Game Maker &#8226 Software Developer &#8226 Web Designer</p>
+	  </div>
+	</div>
 
-	<div class="wrapper">
+	<div class="container-fluid">
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
+		<div class="row">
+			<div class="col-12">
 
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
-
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
+				<div class="row">
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion')" class="linktext" data-toggle="collapse" data-target="#collapseGames"><img src="img/icon_games.png" width="50%"><br><br>Games</p></center>
+					</div>
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion')" class="linktext" href="#accordion" data-toggle="collapse" data-target="#collapseSoftware"><img src="img/icon_software.png" width="50%"><br><br>Software</p></center>
+					</div>
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion')" class="linktext" href="#accordion" data-toggle="collapse" data-target="#collapseOpinions"><img src="img/icon_opinion.png" width="50%"><br><br>Opinions</p></center>
+					</div>
+				</div>
+				<div class="row">
+					<div class="accordion menuaccordion bg-light" id="accordion">
+						<div class="collapse menucollapse bg-light" id="collapseGames" data-parent="#accordion">
+							<div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/poloDemo.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Battle Polo</h5>
+								    <p class="card-text">Play Polo against British people on the moon.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="polo.html" class="btn btn-primary">View</a>
+								    <a target="_blank" href="https://drive.google.com/file/d/0B0djtG22WOS_RkRKZGFZbFJERFU/view" class="btn btn-primary">Download</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/golfPic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Golf Anywhere</h5>
+								    <p class="card-text">Play golf off the golf course.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="golfanywhere.html" class="btn btn-primary">View</a>
+								    <a target="_blank" href="https://gamejolt.com/games/golfanywhere/300716" class="btn btn-primary">Play</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/richmanswarPic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Rich Man's War</h5>
+								    <p class="card-text">A game for you to nuke your friends.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="http://34.194.108.205/richmanswar/rungame.html" class="btn btn-primary">Play</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/codemagicTitle.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Code Magic</h5>
+								    <p class="card-text">Learn the basics of code logic as a wizard.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="https://gamejolt.com/games/codemagic/151447" class="btn btn-primary">Play</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/planePic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Flight Evolution</h5>
+								    <p class="card-text">It's an IO game for sopwith camels.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="http://34.194.108.205/planeevolution/index.html" class="btn btn-primary">Play</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/spacePic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Space Game</h5>
+								    <p class="card-text">Fly ships around in a multiplayer world.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="spacegame.html" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse menucollapse bg-light" id="collapseSoftware" data-parent="#accordion">
+						  <div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/khanPic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Khan</h5>
+								    <p class="card-text">A tetris-playing AI using a genetic algorithm.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="khan.html" class="btn btn-primary">View</a>
+								    <a target="_blank" href="https://github.com/Megastardaboss/javascript-tetris" class="btn btn-primary">Code</a>
+								    <a target="_blank" href="https://megastardaboss.github.io/javascript-tetris/" class="btn btn-primary">Launch</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/chapterSweet.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Chaptersweet</h5>
+								    <p class="card-text">A platform to help run TSA chapters.</p>
+								  </div>
+								  <div class="card-footer">
+								  	<a target="_blank" href="https://github.com/Megastardaboss/chaptersweet" class="btn btn-primary">Code</a>
+								    <a target="_blank" href="http://chaptersweet.x10host.com/" class="btn btn-primary">Launch</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/bitPic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Bitwise XOR Decryptor</h5>
+								    <p class="card-text">A decryptor for very specific use.</p>
+								  </div>
+								  <div class="card-footer">
+								  	<a target="_blank" href="https://github.com/Megastardaboss/bitwise-decoder" class="btn btn-primary">Code</a>
+								    <a target="_blank" href="https://megastardaboss.github.io/bitwise-decoder/" class="btn btn-primary">Launch</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse menucollapse bg-light" id="collapseOpinions" data-parent="#accordion">
+						  <div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/lectureHall.jpg" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">The Presenter's Dilemma</h5>
+								    <p class="card-text">How public speakers waste our time.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="blog1.html" class="btn btn-primary">Read</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/dieHard.jpg" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Die Hard : Not a Christmas Movie</h5>
+								    <p class="card-text">Guns, terrorists, and... the Christmas Spirit?.</p>
+								  </div>
+								  <div class="card-footer">
+								  	<a href="blog2.html" class="btn btn-primary">Read</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion2')" class="linktext" data-toggle="collapse" data-target="#collapseSchool"><img src="img/icon_school.png" width="50%"><br><br>School</p></center>
+					</div>
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion2')" class="linktext" data-toggle="collapse" data-target="#collapseArt"><img src="img/icon_art.png" width="50%"><br><br>Art</p></center>
+					</div>
+					<div class="col-sm-4">
+						<center><p onclick="showElement('accordion2')" class="linktext" data-toggle="collapse" data-target="#collapseOther"><img src="img/icon_other.png" width="50%"><br><br>Other</p></center>
+					</div>
+				</div>
+				<div class="row">
+					<div class="accordion menuaccordion bg-light" id="accordion2">
+						<div class="collapse menucollapse bg-light" id="collapseSchool" data-parent="#accordion2">
+							<div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/electroChem.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Electrochemistry Project</h5>
+								    <p class="card-text">A project for Chemistry class.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="battery.html" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/lego.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Learning to Code is like Building Legos</h5>
+								    <p class="card-text">An analogy essay for AP lang.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="https://drive.google.com/open?id=1PUgC4JhLeRdMlcZzjiJg2tRigsFQ2k6o" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/causeeffect.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">The Decline of the United States</h5>
+								    <p class="card-text">A cause-effect essay for AP lang.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="https://drive.google.com/open?id=1Pr3CdGhCh61OVcLaGPQp-nXJt02WLZwe" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/postman.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Neil Postman Evaluative Argument Essay</h5>
+								    <p class="card-text">An analysis essay based on Amusing Ourselves to Death.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a target="_blank" href="https://drive.google.com/open?id=1LrL4IsKaeKtCi2obM9T-2zHNcSyiccO4" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse menucollapse bg-light" id="collapseArt" data-parent="#accordion2">
+						  <div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/animationInventor.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">3D Animation</h5>
+								    <p class="card-text">An inventor's workshop comes to life.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="animation.html" class="btn btn-primary">View</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/music.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Music</h5>
+								    <p class="card-text">Musical stuff I've composed.</p>
+								  </div>
+								  <div class="card-footer">
+								  	<a href="music.html" class="btn btn-primary">View</a>
+								  	<a target="_blank" href="https://musescore.com/user/5565566?q=user/5565566" class="btn btn-primary">Musescore</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="collapse menucollapse bg-light" id="collapseOther" data-parent="#accordion2">
+						  <div class="card-group">
+							  	<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/halo_boogaloo.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Halo Maps</h5>
+								    <p class="card-text">Custom maps and gamemodes for Halo 5.</p>
+								  </div>
+								  <div class="card-footer">
+								    <a href="halo.html" class="btn btn-primary">Read</a>
+								  </div>
+								</div>
+								<div class="card" style="width: 100%;">
+								  <img class="card-img-top" src="img/shaqPic.png" height="50%" alt="Card image">
+								  <div class="card-body">
+								    <h5 class="card-title">Shaq Font</h5>
+								    <p class="card-text">Replaces every character with a picture of Shaquille O' Neal.</p>
+								  </div>
+								  <div class="card-footer">
+								  	<a href="shaqfont.html" class="btn btn-primary">View</a>
+								  	<a target="_blank" href="Shaq.ttf" class="btn btn-primary">Download</a>
+								  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
 		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
-
-			<!--
-			This image is gonzo for now
-			<img src="StatesPic.jpg" width="220" height="300" style="float:left; position:relative; top:20px; left:30px;">
-			-->
-
-			
-			<p class="subtitleText1">
-				About This Site
-			</p>
-
-			<br>
-
-			<p class="subtitleText2">
-				Games
-			</p>
-
-			<p class="bodyText1">
-				Much of the content on this site will include my personal games and those for competitions, made available in HTML for everyone to play.
-				<br><br>
-				I appreciate any and all feedback on these, as I'm almost constantly developing each of them!
-				<br><br>
-				Here is a link to my GameJolt page : <a href="https://venomsoftware.gamejolt.io/">GameJolt - VenomSoftware</a>
-			</p>
-			<br>
-
-			<p class="subtitleText2">
-				Software
-			</p>
-
-			<p class="bodyText1">
-				Any software I develop far enough so as to be useful and attributable I will upload here.
-				<br><br>
-				This may include programs to help with math functions, store school notes easier, or even just recolor pictures of cats named smokey.
-				<br><br>
-				Here is a link to my GitHub, which I am attempting to use more : <a href="https://github.com/Megastardaboss">GitHub - Megastardaboss</a>
-			</p>
-
-			<p class="subtitleText2">
-				Literature
-			</p>
-
-			<p class="bodyText1">
-				My tutorials and guides, along with any other relevant works of mine, will also be included here.
-				<br><br>
-				I am currently writing a comprehensive guide to parliamentary procedure and a programming introduction to TI-Basic.
-			</p>
-			<br>
-
-			<p class="subtitleText2">
-				Weird Stuff
-			</p>
-
-			<p class="bodyText1">
-				The truth about me is what I decide to make is unpredictable, but no matter what my creativity may take the form of I'm going to share it.
-				<br><br>
-				Other content, such as fonts, models, art, presentations, ect. will be posted here too. Utilize it as you will!
-			</p>
-			<br>
-
-		</div>
-
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>

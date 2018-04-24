@@ -1,90 +1,80 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4 text-primary">Joshua Famous</h1>
+	    <p class="lead">Game Maker &#8226 Software Developer &#8226 Web Designer</p>
+	  </div>
+	</div>
 
-	<div class="wrapper">
+	<div class="container-fluid">
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
-
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
-
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
-		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
 			
-			<p class="subtitleText1">
-				Electrochemistry Project
-			</p>
+				<h1>Electrochemistry Project</h1>
 
-			<p class="bodyText1">
-				A video documenting my team's construction of a voltaic cell, done for Chemistry class.
-			</p>
-			<br>
+				<br>
 
-			<center>
-			<video width="100%" height="300" controls>
-			  <source src="img/BatteryProject.mp4" type="video/mp4">
-			  Your browser does not support the video tag.
-			</video>
-			</center>
+				<h5>
+					A video documenting my team's construction of a voltaic cell, done for Chemistry class.
+				</h5>
 
-			<p class="subtitleText2">
+				<br>
+
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+				<video width="100%" height="300" controls>
+				  <source src="img/BatteryProject.mp4" type="video/mp4">
+				  Your browser does not support the video tag.
+				</video>
+				</center>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+			<h3>
 				Reflection
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				When our Chemistry teacher introduced our electrochemistry project, my team knew immediately what we wanted to do. Instead of creating a "cookie-cutter" presentation using a slideshow, we instead opted to use some creativity and present our creation in the form of a 70's-80's style VHS tape. Affectionately deemed "The Science Show", we're incredibly proud of how it came out. Over the course of this project, I was able to use my skill with comprehending and explaning science topics and video editing. I mixed the video, and gave it the VHS-style touch, with the classic font, changing hues, scratchy white lines, static sound, and slightly distorted audio. A challenge I faced during this proccess was giving the projection distortion, without compromising the educational integrity of it - in some versions it was impossible to understand the explanation. I have always found my self to be a more logical person, but I'm also able to express creativity way outside of the box. This was one of the times that I decided to not just go for the easy grade, but assimilate something that I'd be proud of, and would want to watch even after the project.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Projection
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Naturally, humans try to minimize effort and maximize outcome. This isn't always the right approach. This is one case where I decided to put more effort than was required, and I found the result to be infinitely more satisfying than if my group and I had opted to minimize the time spent on our presentation. Looking ahead in life, I'm certainly going to try this approach more, in order to set myself ahead of the curve. As I continue to grow as a student and person my skillset and comprehension levels will expand, allowing me to accomplish incredible things. When I add to that potential the motivation and inspiration to achieve at a higher level than simply what is required of me - that is when I'll truly excel in life.
 			</p>
 
 			<br><br>
-
+				
+			</div>
 		</div>
-
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>

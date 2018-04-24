@@ -1,3 +1,39 @@
+//stuff to do when called
+document.getElementsByTagName('head')[0].innerHTML = `
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110539742-1');
+  </script>
+  
+  <title>SchwaStuff</title>
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`;
+document.getElementById('titlebar').innerHTML = `
+  <img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
+      <p class="titleText1">
+        Joshua Famous
+      </p>
+      <br />
+      <p class="titleText2">
+        Game Maker &#8226 Software Developer &#8226 Web Designer
+      </p>`;
+
+function showElement(thidis){
+  var elmnt = document.getElementById(thidis);
+  elmnt.scrollIntoView();
+}
+
 function sidebarToggle(){
 	//declare variables
 	var openorclose;	//specify the action to perform

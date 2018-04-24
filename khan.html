@@ -1,78 +1,67 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4 text-primary">Joshua Famous</h1>
+	    <p class="lead">Game Maker &#8226 Software Developer &#8226 Web Designer</p>
+	  </div>
+	</div>
 
-	<div class="wrapper">
+	<div class="container-fluid">
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
-
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
-
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
-		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
-
-			<a href="https://megastardaboss.github.io/javascript-tetris/" class="playButton" target="_blank">Launch</a>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
 			
-			<p class="subtitleText1">
-				Khan the Tetris-Playing AI
-			</p>
+				<h1>Khan the Tetris-Playing AI</h1>
 
-			<p class="bodyText1">
-				Software using a genetic algorithm to play a basic version of Tetris.
-			</p>
-			<br>
+				<br>
 
-			<center>
-			<iframe src="https://megastardaboss.github.io/javascript-tetris/" width="100%" height="300px"></iframe>
-			</center>
+				<h5>
+					Software using a genetic algorithm to play a basic version of Tetris.
+				</h5>
 
-			<p class="subtitleText2">
+				<br>
+
+				<a href="https://megastardaboss.github.io/javascript-tetris/" class="text-primary" style="font-size:24px;" target="_blank">Launch</a>
+
+				<br>
+
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+					<iframe src="https://megastardaboss.github.io/javascript-tetris/" width="100%" height="300px"></iframe>
+				</center>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+			<h3>
 				Inspiration
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				I should first note that this game is based off of an article on a Tetris-playing AI found here : <a href="https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/">Tetris AI</a> by Yiyuan Lee. The tetris game I used is forked from jakesgordon on GitHub, licensed as open-source software found here : <a href="https://github.com/jakesgordon/javascript-tetris">JavaScript Tetris</a> by jakesgordon. To try to beat Khan, you can play the tetris game located at this link : <a href="https://codeincomplete.com/games/tetris/">JavaScript Tetris Game</a>.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				The Game
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Essentially, I started this project by assessing the Tetris engine setup by jakesgordon, realizing that existing methods to find whether a spot was occupied or not, and to find where a piece currently resides, could be utilized in making an AI to play the game.
@@ -80,9 +69,9 @@
 				The first thing I did was duplicate the blocks object into a 'fakeblocks' object - so that the AI could simulate possible moves without actually changing the real game board. I then wrote a method to be called each time a new block appears, wherein Khan assesses each possible column. He next finds the lowest point that the given block could fall to in that column, and assesses it for each rotation. For every possible move that would fit, Khan calculates a 'score' to determine whether that move is the best one available to him or not.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Heuristics and Move Assessment
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				The main influence when deciding on heuristics for the metaheuristic was the article by Yiyuan Lee - using 4 heuristics to weigh the value of an individual move. They are :
@@ -98,9 +87,9 @@
 				Using these heuristics, I setup Khan with a score function such that the score of a move is equal to a weight multiplied by each of the heuristic values. What makes the AI learn is by adjusting those weighted values, varying which factors are most important to the AI. One version of Khan might care more about not creating any holes - one might care most about keeping the grid flat.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				The Genetic Algorithm
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Khan is initialized with a population of 2 vectors, each containing 4 values - a weight for each of the 4 heuristics. Those 2 individuals are then crossed-over into a new individual, and a random chance at mutation is applied. The new individual is then added to the population, along with the score they received.
@@ -108,36 +97,39 @@
 				At the start of each new game, Khan finds the 'fittest' (highest-scoring) two individuals in the population, and uses them for crossover. Mutation allows for Khan to try new weights, evolving away from the population, which occurs at a 20% chance for each weight.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Bonus
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Also, here's the weird version of tetris I made : <a href="tetris/index.html">Play</a>
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Reflection
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Khan was one of my most unusual personal projects. Following a Tetris tournament (which I won) between some friends and me, one of them challenged me to make an artificial intelligence that could beat any of us. I'd previously made a low-functioning chatbot AI by the name of Jon, so I had only minimal experience in the field of artificial intelligence going into this project. The primary skill required of me during this venture was problem-solving, especially with programming. Over a span of about a week, I invested 4+ hours a day to working on Khan. While I used some articles on existing Tetris AIs to help me determine the metaheuristics (overall structure) for Khan, all of the coding would be up to me. The process involved mostly running Khan over and over again, just to watch him make mistakes that his coding should've prohibited. As a result I found myself constantly diving back into the same sections of programming to try to diagnose him, each time getting one step closer to perfection. Patience and dedication were important. During this debugging phase, he never achieved a score of over 5000 points. In comparison, my high score was over 400,000. He consistenly made stupid mistakes, and almost like a frustrated parent, I grew close to giving up on his learning. One day, just over a week after beginning building him, I made a change that turned out to be crucial. Suddenly Khan eclipsed his 5,000 points. He kept going, kept playing, all the way until the scoreboard was filled with 9's. After about an eight-hour long game, he had beaten my 400,000 points - with a score of 999,999,999,999. Having made him successful, I reset his learning (he uses a genetic algorithm, which is to say that he has to learn the game on his own), and let him try to grow without my help. His first game, he simply dropped the blocks straight down with no involvement. Slowly, he began to figure out how the fit together, and in just a few hours he was back to his unstoppable self. I felt tremendous pride after his success, and realized my hard work and dedication to finishing the project had paid off.
 			</p>
 
-			<p class="subtitleText2">
+			<h3>
 				Projection
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				As an incredibly ambitious person, I'm apt to start projects, stay up all night working on them, only to abandon them the next morning when they don't come together the way I'd foreseen. Khan was an example of a time when I powered through the frustration to the end of the project, with overwhelmingly satisfying results. My satisfaction is best described as that of a parent watching their child learn to walk. My biggest takeaway from my Khan project is the understanding that seeing a job through to completion is immensely more rewarding, and looking ahead in life I'll be sure to carry that knowledge with me. In a technical aspect, Khan taught me more about artificial intelligence than any of my former programs. As a forefront of the technological industry, and one of the highest-paying jobs available, I've recently highly considered entering the field of computer science with a specialty in artificial intelligence. Currently, I plan on entering project management, on the business side, but if I continue to learn with programs like Khan, I just might change my future.
 			</p>
 
 			<br><br>
-
+				
+			</div>
 		</div>
-
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>

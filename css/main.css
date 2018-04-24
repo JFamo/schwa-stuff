@@ -3,6 +3,40 @@
 	padding: 0;
 }
 
+.menuaccordion{
+	width: 100%;
+	text-align: center;
+	height:100%;
+	float:center;
+	align-content: center;
+}
+
+.menucollapse{
+	width: 100%;
+	text-align: center;
+	height:100%;
+	float:center;
+	align-content: center;
+	padding: 1% 5% 1% 5%;
+}
+
+.linktext{
+	text-align: center;
+	font-size: 24px;
+	width:70%;
+	height:70%;
+	padding: 15% 15% 15% 15%;
+	transition: all 0.5s;
+}
+
+.linktext:hover{
+	width:80%;
+	height:80%;
+	font-size: 24px;
+	padding: 10% 10% 10% 10%;
+	cursor: pointer;
+}
+
 .wrapper{
 	width: 100%;
 	max-width: 100%;
@@ -30,81 +64,6 @@
 	overflow: hidden;
 }
 
-.titleText1{
-	color: white;
-	font-weight: 600;
-	font-size: 60px;
-	letter-spacing: 2px;
-	position: static;
-	top: 20px;
-	left: 20px;
-	font-family: 'Kanit', sans-serif;
-}
-.titleText2{
-	color: white;
-	font-weight: 600;
-	font-size: 30px;
-	letter-spacing: 2px;
-	position: static;
-	top: 20px;
-	left: 60px;
-	font-family: 'Kanit', sans-serif;
-}
-
-.sidebarText1{
-	color: white;
-	font-weight: 600;
-	font-size: 30px;
-	letter-spacing: 2px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	float: left;
-	font-family: 'Kanit', sans-serif;
-}
-
-.subtitleText1{
-	color: black;
-	font-weight: 600;
-	font-size: 40px;
-	letter-spacing: 2px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	font-family: 'Kanit', sans-serif;
-}
-
-.subtitleText2{
-	color: black;
-	font-weight: 600;
-	font-size: 30px;
-	letter-spacing: 2px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	font-family: 'Kanit', sans-serif;
-}
-
-.bodyText1{
-	color: black;
-	font-size: 20px;
-	font-weight: 400px;
-	font-family: 'Roboto', sans-serif;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 10px;
-}
-
-.bodyText1List{
-	color: black;
-	font-size: 20px;
-	font-weight: 400px;
-	font-family: 'Roboto', sans-serif;
-	padding-left: 80px;
-	padding-right: 40px;
-	padding-top: 10px;
-}
-
 .sidebarItem{
 	font-family: 'Kanit', sans-serif;
 	color: white;
@@ -125,10 +84,6 @@
 	background-color: #185153;
 }
 
-.bodyText{
-	font-family: 'Kanit', sans-serif;
-	font-weight: 400;
-}
 .sidebarButton{
 	float: left;
 	padding-left: 20px;
@@ -137,26 +92,6 @@
 
 .playButton{
 	font-family: 'Kanit', sans-serif;
-	color: white;
 	font-weight: 600;
-	font-size: auto;
-	margin-top: 50px;
-	margin-right: 20px;
-	margin-left: 20px;
-	padding-top: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 10px;
-	letter-spacing: 1px;
-	float: right;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	width: 100px;
-	height: 30px;
-	background-color: #0E4749;
-}
-
-.playButton:hover, .sidebarItem:active {
-	background-color: #185153;
+	font-size: 24px;
 }
