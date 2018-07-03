@@ -19,15 +19,11 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`;
-document.getElementById('titlebar').innerHTML = `
-  <img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-      <p class="titleText1">
-        Joshua Famous
-      </p>
-      <br />
-      <p class="titleText2">
-        Game Maker &#8226 Software Developer &#8226 Web Designer
-      </p>`;
+document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>`;
 
 function showElement(thidis){
   var elmnt = document.getElementById(thidis);
@@ -138,4 +134,16 @@ function sidebarToggle(){
   			document.getElementById("sidebarContent").style.display = "none";
   		}
   	}
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
 }
