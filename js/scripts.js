@@ -27,6 +27,7 @@ document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" c
     <p>Software</p>
     <a href="chapter.html">ChapterSweet</a>
     <a href="khan.html">Khan the Tetris AI</a>
+    <a href="picturesque.html">Picturesque</a>
     <a href="bitwise.html">XOR Decryptor</a>
     <p>Games</p>
     <a href="polo.html">Battle Polo</a>

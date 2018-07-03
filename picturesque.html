@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</head>
+
+<!--Page Content-->
+<body>
+
+	<div id="mySidenav" class="sidenav">
+	</div>
+
+	<div class="container-fluid" id="main" style="padding:0 0 0 0;">
+
+		<div style="font-size:30px;cursor:pointer;position:sticky;padding-top:30px;padding-left:30px;" onclick="openNav()">&#9776; Menu</div>
+
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
+			
+				<h1>Picturesque</h1>
+
+				<br>
+
+				<h5>
+					A party game where players respond to prompts with pictures from their camera rolls.
+				</h5>
+
+				<br>
+				
+				<a href="https://picturesque-game.herokuapp.com/" class="text-primary" style="font-size:24px;" target="_blank">Live Software</a>
+				<br>
+				<a href="https://github.com/Megastardaboss/Picturesque" class="text-primary" style="font-size:24px;" target="_blank">Source Code</a>
+
+				<br>
+
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+					<img src="img/picturesquePic.png" width="100%"/>
+				</center>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+			<h3>
+				Instructions
+			</h3>
+
+			<p class="bodyText1">
+				Players start by choosing a name which they will appear by, and entering a room code. The room code will group players together, and must be the same for all players who wish to play together. The 'Points to Win' field is filled out by all players, but the first to join the room determines how many points will be necessary to win. Once players have joined the room, any player may use the 'Start Game' button to begin that room's game. One player will be chosen as the Judge each round - they do not submit a photo. Each other player will see the randomly selected prompt, and will be able to select and upload a photo in response. Once all photos are uploaded, the judging phase begins. Each submitted photo appears, and the judge has a 'Choose Winner' button next to each. The judge should chose the picture he/she feels best responds to the prompt, and select that picture as the winner. The winner's name and submission will be displayed to all users for a few seconds, and then the scoreboard will appear. After a few seconds, the judging will change and the next round will begin. Once either there is only one player left in the room or a player achieves the required points to win, the game will end.
+			</p>
+			<br>
+				
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
+
+</html>
