@@ -18,7 +18,8 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`;
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">`;
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <p>Software</p>
     <a href="#">About</a>
