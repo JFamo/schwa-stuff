@@ -23,6 +23,7 @@ document.getElementsByTagName('head')[0].innerHTML = `
 
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
     <p>Software</p>
     <a href="chapter.html">ChapterSweet</a>
     <a href="khan.html">Khan the Tetris AI</a>

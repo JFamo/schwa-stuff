@@ -1,96 +1,61 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
 
-	<div class="wrapper">
+	<div id="mySidenav" class="sidenav">
+	</div>
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar">
-		<div id="sidebarContent">
-			<center>
-			<a href="#" class="sidebarItem" id="sidebarLinkMain">Main</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkContact">Contact</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkRich">Rich Man's War</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkSupremacy">Supremacy</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
-			<a href="#" class="sidebarItem" id="sidebarLinkBXD">Bitwise XOR Decryptor</a>
-			<center>
-		</div>
-		</div>
+	<div class="container-fluid" id="main" style="padding:0 0 0 0;">
 
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
+		<div style="font-size:30px;cursor:pointer;position:sticky;padding-top:30px;padding-left:30px;" onclick="openNav()">&#9776; Menu</div>
 
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
-		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
-
-			<!--
-			This image is gonzo for now
-			<img src="StatesPic.jpg" width="220" height="300" style="float:left; position:relative; top:20px; left:30px;">
-			-->
-
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
 			
-			<p class="subtitleText1">
-				Contact
-			</p>
+				<h1>Contact</h1>
 
-			<p class="bodyText1">
-				I don't really know why you'd need to contact me, but here it is.
-			</p>
-			<br>
+				<br>
 
-			<p class="subtitleText2">
-				Email
-			</p>
+				<h5>
+					My information, for business inquiries, questions, or anything else.
+				</h5>
 
-			<p class="bodyText1">
-				joshua.famous.web@gmail.com
-			</p>
-			<br>
+				<br>
+				
+				<a href="mailto:joshua.famous.web@gmail.com" class="text-primary" style="font-size:24px;">joshua.famous.web@gmail.com</a>
+				<br>
 
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+					<img src="img/mebig.jpg" width="100%"/>
+				</center>
+			</div>
+			<div class="col-1"></div>
 		</div>
-
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				
+			</div>
+		</div>
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>
