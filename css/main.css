@@ -110,9 +110,18 @@
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 0px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav p {
+    padding: 8px 8px 8px 24px;
+    text-decoration: none;
+    font-size: 30px;
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -142,30 +151,13 @@
 
 .centralText{
 	position:absolute;
-	left:50vw;
 	top:50vh;
-	width: 500px;
-	height: 200px;
-	margin-top: -100px;
-	margin-left: -250px;
+	width: 100%;
+	height: 120px;
+	margin-top: -60px;
+	background-color:white;
 }
 
-.titleimage-1{
-	position:absolute;
-	left:20vw;
-	top:75vh;
-	width: 186px;
-	height: 132.5px;
-	margin-top: -93px;
-	margin-left: -66.25px;
-}
-
-.titleimage-2{
-	position:absolute;
-	left:80vw;
-	top:75vh;
-	width: 90px;
-	height: 90px;
-	margin-top: -45px;
-	margin-left: -45px;
+.titleBody{
+	background-size: 100vw 100vh;
 }

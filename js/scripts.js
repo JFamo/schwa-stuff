@@ -20,6 +20,7 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">`;
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <p>Software</p>
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
