@@ -57,6 +57,7 @@
 	min-height: 1000px;
 	background-color: #FFFFFF;
 	margin-left: 0;
+	transition: 0.5s;
 }
 
 .titlebar{
@@ -100,15 +101,16 @@
 
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 0px;
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 0px;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    white-space: nowrap;
 }
 
 .sidenav a {
@@ -135,7 +137,7 @@
 
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: 0px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
@@ -144,6 +146,8 @@
 #main {
     transition: margin-left .5s;
     padding: 16px;
+    padding: 0px; 
+    margin-left: 0px;
 }
 
 @media screen and (max-height: 450px) {

@@ -20,6 +20,7 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">`;
+
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
     <p>Software</p>
@@ -146,7 +147,7 @@ function openNav() {
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("mySidenav").style.width = "0px";
+    document.getElementById("main").style.marginLeft= "0px";
     document.body.style.backgroundColor = "white";
 }
