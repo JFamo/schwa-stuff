@@ -38,6 +38,9 @@ document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" c
     <p>Animation</p>
     <a href="animation.html">Inventor's Lab</a>
     <a target="_blank" href="https://drive.google.com/file/d/1rK9iuqDd0JFy1jYv1QT0YPIu995TdYK9/view">The Biggest Dab</a>
+    <p>Opinions</p>
+    <a href="blog1.html">Presenter's Dilemma</a>
+    <a href="blog2.html">Die Hard</a>
     <p>Misc</p>
     <a href="battery.html">The Science Show</a>
     <a href="music.html">Music</a>
