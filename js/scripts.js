@@ -21,11 +21,12 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">`;
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
     <p>Software</p>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>`;
+    <a href="khan.html">Khan the Tetris AI</a>
+    <p>Games</p>
+    <a href="polo.html">Battle Polo</a>
+    <a href="golfanywhere.html">Golf Anywhere</a>`;
 
 function showElement(thidis){
   var elmnt = document.getElementById(thidis);

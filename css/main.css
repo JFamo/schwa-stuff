@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .menuaccordion{
@@ -55,6 +56,7 @@
 	height: 100%;
 	min-height: 1000px;
 	background-color: #FFFFFF;
+	margin-left: 0;
 }
 
 .titlebar{
@@ -199,4 +201,14 @@
 	margin-top: -100px;
 	margin-left: -100px;
 	z-index:51;
+}
+.titleimage-4{
+	position:absolute;
+	left:28vw;
+	top:15vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:50;
 }
