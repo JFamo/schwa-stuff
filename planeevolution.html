@@ -1,84 +1,67 @@
 <!DOCTYPE html>
 <html>
 
-<!--Technical Stuff, Imports-->
-<script src="js/scripts.js"></script>
-
 <head>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110539742-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110539742-1');
-	</script>
-	
-	<title>SchwaStuff</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Kanit:400,600,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </head>
 
 <!--Page Content-->
 <body>
 
-	<div class="wrapper">
+	<div id="mySidenav" class="sidenav">
+	</div>
 
-		<div class="sidebar" style="display:none; width: 0%;" id="sidebar"></div>
+	<div class="container-fluid" id="main" style="padding:0 0 0 0;">
 
-		<div class="titlebar" style="width: 70%; margin-left: 10%;" id="titlebar">
+		<div style="font-size:30px;cursor:pointer;position:sticky;padding-top:30px;padding-left:30px;" onclick="openNav()">&#9776; Menu</div>
 
-
-			<img class="sidebarButton" src="img/openSidebar.png" width="30" height="30" onclick="sidebarToggle();"/>
-			<p class="titleText1">
-				Joshua Famous
-			</p>
-			<br />
-			<p class="titleText2">
-				Game Maker &#8226 Software Developer &#8226 Web Designer
-			</p>
-
-		</div>
-
-		<div class="main" style="width: 70%; margin-left: 10%;" id="main">
-
-			<!--
-			This image is gonzo for now
-			<img src="StatesPic.jpg" width="220" height="300" style="float:left; position:relative; top:20px; left:30px;">
-			-->
-
-			<a href="http://34.194.108.205/planeevolution/index.html" class="playButton" target="_blank">Play</a>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-5">
 			
-			<p class="subtitleText1">
-				Plane Evolution
-			</p>
+				<h1>Plane Evolution</h1>
 
-			<p class="bodyText1">
-				This game was the submission of team 2004-901 to the Pennsylvania Technology Student Association 2017 Regional Conference.
-			</p>
-			<br>
+				<br>
 
-			<center>
-			<img src="img/planePic.png" width="100%"/>
-			</center>
+				<h5>
+					It's an IO game for Sopwith Camels.
+				</h5>
 
-			<p class="subtitleText2">
+				<br>
+				
+				<a href="http://34.194.108.205/planeevolution/index.html" class="text-primary" style="font-size:24px;" target="_blank">Play</a>
+
+				<br>
+
+				<a href="index.html" style="font-size:24px;" class="text-danger">Back</a>
+
+			</div>
+			<div class="col-5">
+				<center>
+					<img src="img/planePic.png" width="100%"/>
+				</center>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+
+			<h3>
 				Description
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Control a small Sopwith Camel biplane on a quest to get bigger. Absorb smaller planes to increase in size and technology level to eventually become the gigantic Spruce Goose. Avoid larger and faster planes which will instantly force the player to restart. Read and learn about all of the planes involved in the game.
 			</p>
 			<br>
 
-			<p class="subtitleText2">
+			<h3>
 				Instructions
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				 Left-Click Buttons to Select
@@ -95,10 +78,11 @@
 				<br><br>
 				 Hit Escape to Return to Menu
 			</p>
-
-			<p class="subtitleText2">
+			<br>
+			
+			<h3>
 				Changelog
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				Version 1.0.0
@@ -111,9 +95,9 @@
 			</p>
 			<br>
 
-			<p class="subtitleText2">
+			<h3>
 				Downloads
-			</p>
+			</h3>
 
 			<p class="bodyText1">
 				You can play the game at the following link.
@@ -125,11 +109,14 @@
 				<a href="http://34.194.108.205/sopwithio/index.html" target="_blank">Sopwithcamel.io</a>
 			</p>
 			<br>
-
+				
+			</div>
 		</div>
-
 	</div>
 
 </body>
+
+<!--Technical Stuff, Imports-->
+<script src="js/scripts.js"></script>
 
 </html>

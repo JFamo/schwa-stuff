@@ -226,6 +226,36 @@
 	margin-left: -100px;
 	z-index:50;
 }
+.titleimage-6{
+	position:absolute;
+	left:68vw;
+	top:8vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-7{
+	position:absolute;
+	left:44vw;
+	top:70vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-8{
+	position:absolute;
+	left:67vw;
+	top:68vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
 
 @media only screen and (max-width: 800px) {
    	.bubbleImage{

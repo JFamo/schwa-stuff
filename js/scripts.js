@@ -27,9 +27,14 @@ document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" c
     <p>Software</p>
     <a href="chapter.html">ChapterSweet</a>
     <a href="khan.html">Khan the Tetris AI</a>
+    <a href="bitwise.html">XOR Decryptor</a>
     <p>Games</p>
     <a href="polo.html">Battle Polo</a>
-    <a href="golfanywhere.html">Golf Anywhere</a>`;
+    <a href="golfanywhere.html">Golf Anywhere</a>
+    <a href="richmanswar.html">Rich Man's War</a>
+    <a href="codemagic.html">Code Magic</a>
+    <a href="planeevolution.html">Plane Evolution</a>
+    <a href="spacegame.html">Space Game</a>`;
 
 function showElement(thidis){
   var elmnt = document.getElementById(thidis);
