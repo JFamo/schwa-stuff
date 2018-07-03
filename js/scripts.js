@@ -34,7 +34,15 @@ document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" c
     <a href="richmanswar.html">Rich Man's War</a>
     <a href="codemagic.html">Code Magic</a>
     <a href="planeevolution.html">Plane Evolution</a>
-    <a href="spacegame.html">Space Game</a>`;
+    <a href="spacegame.html">Space Game</a>
+    <p>Animation</p>
+    <a href="animation.html">Inventor's Lab</a>
+    <a target="_blank" href="https://drive.google.com/file/d/1rK9iuqDd0JFy1jYv1QT0YPIu995TdYK9/view">The Biggest Dab</a>
+    <p>Misc</p>
+    <a href="battery.html">The Science Show</a>
+    <a href="music.html">Music</a>
+    <a href="shaqfont.html">Shaq Font</a>
+    <a href="halo.html">Halo Maps</a>`;
 
 function showElement(thidis){
   var elmnt = document.getElementById(thidis);

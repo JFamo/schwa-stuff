@@ -110,6 +110,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    padding-bottom: 60px;
     white-space: nowrap;
 }
 
@@ -250,6 +251,56 @@
 	position:absolute;
 	left:67vw;
 	top:68vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-9{
+	position:absolute;
+	left:20vw;
+	top:68vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:51;
+}
+.titleimage-10{
+	position:absolute;
+	left:14vw;
+	top:65vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-11{
+	position:absolute;
+	left:90vw;
+	top:75vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-12{
+	position:absolute;
+	left:88vw;
+	top:5vh;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index:49;
+}
+.titleimage-13{
+	position:absolute;
+	left:46vw;
+	top:6vh;
 	width: 200px;
 	height: 200px;
 	margin-top: -100px;
