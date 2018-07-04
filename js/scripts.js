@@ -23,6 +23,7 @@ document.getElementsByTagName('head')[0].innerHTML = `
 
 document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
     <a href="contact.html">Contact</a>
     <p>Software</p>
     <a href="chapter.html">ChapterSweet</a>
@@ -42,6 +43,8 @@ document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" c
     <p>Opinions</p>
     <a href="blog1.html">Presenter's Dilemma</a>
     <a href="blog2.html">Die Hard</a>
+    <p>Web Design</p>
+    <a href="web.html">Website Portfolio</a>
     <p>Misc</p>
     <a href="battery.html">The Science Show</a>
     <a href="music.html">Music</a>
