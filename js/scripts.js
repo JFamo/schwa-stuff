@@ -21,35 +21,6 @@ document.getElementsByTagName('head')[0].innerHTML = `
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">`;
 
-document.getElementById('mySidenav').innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="contact.html">Contact</a>
-    <p>Software</p>
-    <a href="chapter.html">ChapterSweet</a>
-    <a href="khan.html">Khan the Tetris AI</a>
-    <a href="picturesque.html">Picturesque</a>
-    <a href="bitwise.html">XOR Decryptor</a>
-    <p>Games</p>
-    <a href="polo.html">Battle Polo</a>
-    <a href="golfanywhere.html">Golf Anywhere</a>
-    <a href="richmanswar.html">Rich Man's War</a>
-    <a href="codemagic.html">Code Magic</a>
-    <a href="planeevolution.html">Plane Evolution</a>
-    <a href="spacegame.html">Space Game</a>
-    <p>Animation</p>
-    <a href="animation.html">Inventor's Lab</a>
-    <a target="_blank" href="https://drive.google.com/file/d/1rK9iuqDd0JFy1jYv1QT0YPIu995TdYK9/view">The Biggest Dab</a>
-    <p>Opinions</p>
-    <a href="blog1.html">Presenter's Dilemma</a>
-    <a href="blog2.html">Die Hard</a>
-    <p>Web Design</p>
-    <a href="web.html">Website Portfolio</a>
-    <p>Misc</p>
-    <a href="battery.html">The Science Show</a>
-    <a href="music.html">Music</a>
-    <a href="shaqfont.html">Shaq Font</a>
-    <a href="halo.html">Halo Maps</a>`;
 
 function showElement(thidis){
   var elmnt = document.getElementById(thidis);
@@ -63,45 +34,6 @@ function sidebarToggle(){
 	var contentWidth;	//current width of the content (main and titlebar)
 
   //THIS SECTION SETS THE LINKS
-
-  document.getElementById("sidebar").innerHTML = `
-  <div id="sidebarContent">
-    <center>
-      <p class="sidebarText1">
-        Info
-      </p>
-      <a href="index.html" class="sidebarItem" id="sidebarLinkMain">Main</a>
-      <a href="contact.html" class="sidebarItem" id="sidebarLinkContact">Contact</a>
-      <p class="sidebarText1">
-        Games
-      </p>
-      <a href="polo.html" class="sidebarItem" id="sidebarLinkGolf">Battle Polo</a>
-      <a href="golfanywhere.html" class="sidebarItem" id="sidebarLinkGolf">Golf Anywhere</a>
-      <a href="richmanswar.html" class="sidebarItem" id="sidebarLinkRich">Rich Man\'s War</a>
-      <a href="codemagic.html" class="sidebarItem" id="sidebarLinkCodeMagic">Code Magic</a>
-      <a href="planeevolution.html" class="sidebarItem" id="sidebarLinkPlane">Plane Evolution</a>
-      <a href="spacegame.html" class="sidebarItem" id="sidebarLinkSpace">Space Game</a>
-      <p class="sidebarText1">
-        Software
-      </p>
-      <a href="khan.html" class="sidebarItem" id="sidebarLink">Khan the Tetris AI</a>
-      <a href="http://chaptersweet.x10host.com" class="sidebarItem" id="sidebarLinkBXD" target="_blank">ChapterSweet</a>
-      <a href="https://megastardaboss.github.io/bitwise-decoder/" class="sidebarItem" id="sidebarLinkBXD" target="_blank">Bitwise XOR Decryptor</a>
-      <p class="sidebarText1">
-        Opinions
-      </p>
-      <a href="blog1.html" class="sidebarItem" id="sidebarLinkPresenter">The Presenter's Dilemma</a>
-      <a href="blog2.html" class="sidebarItem" id="sidebarLinkDiehard">Die Hard : Not a Christmas Movie</a>
-      <p class="sidebarText1">
-        Others
-      </p>
-      <a href="battery.html" class="sidebarItem" id="sidebarLinkBattery">Electrochemistry Project</a>
-      <a href="animation.html" class="sidebarItem" id="sidebarLinkAnimation">3D Animation</a>
-      <a href="music.html" class="sidebarItem" id="sidebarLinkMusic">Music</a>
-      <a href="shaqfont.html" class="sidebarItem" id="sidebarLinkShaq">Shaq Font</a>
-      <a href="halo.html" class="sidebarItem" id="sidebarLinkHalo">Halo Maps</a>
-    <center>
-  </div>`;
 
 	//check the action, and start that action
 	if(document.getElementById("sidebar").style.display == "none"){
