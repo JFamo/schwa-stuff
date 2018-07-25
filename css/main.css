@@ -40,6 +40,34 @@
 	color:white;
 }
 
+.headerBackBlue{
+	background-color: rgba(63,136,197,0.5);
+	border-radius:5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+.headerBackRed{
+	background-color: rgba(233,79,55,0.5);
+	border-radius:5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+.headerBackGreen{
+	background-color: rgba(32,191,85,0.5);
+	border-radius:5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+.headerBackYellow{
+	background-color: rgba(231,226,71,0.5);
+	border-radius:5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
 .mybtn{
 	padding-top:20px;
 	padding-right:40px;
@@ -53,6 +81,25 @@
 }
 .mybtn:hover{
     transform: translateY(-3px);
+	opacity:1;
+	text-decoration: none;
+	color:white !important;
+	box-shadow: 1 4px 17px rgba(55, 125, 255, 0.35);
+}
+
+.mybtn-play{
+	padding-top:18px;
+	padding-right:20px;
+	padding-bottom:18px;
+	padding-left:20px;
+	border-radius: 50%;
+	text-decoration: none;
+	opacity:0.5;
+	transition: transform 0.2s ease-in-out;
+	display:inline-block;
+}
+.mybtn-play:hover{
+    transform: scale(1.1);
 	opacity:1;
 	text-decoration: none;
 	color:white !important;
