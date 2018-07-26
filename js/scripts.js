@@ -105,3 +105,22 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0px";
     document.body.style.backgroundColor = "white";
 }
+
+function randomPage(type){
+  var softwarePages = ["chapter.html","khan.html","picturesque.html"];
+  var gamePages = ["polo.html","golfanywhere.html","richmanswar.html","spacegame.html"];
+  var otherPages = ["animation.html","blog1.html","web.html","battery.html","shaqfont.html","music.html"];
+  var page="#";
+  switch(type){
+    case 'software':
+      page = softwarePages[Math.floor(Math.random() * softwarePages.length)];
+      break;
+    case 'game':
+      page = gamePages[Math.floor(Math.random() * gamePages.length)];
+      break;
+    case 'other':
+      page = otherPages[Math.floor(Math.random() * otherPages.length)];
+      break;
+  }
+  window.location.href = page;
+}

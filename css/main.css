@@ -119,15 +119,17 @@
 }
 
 .mybtn-play{
-	padding-top:18px;
-	padding-right:20px;
-	padding-bottom:18px;
-	padding-left:20px;
+	padding-top:7px;
+	padding-right:10px;
+	padding-bottom:7px;
+	padding-left:10px;
 	border-radius: 50%;
 	text-decoration: none;
 	opacity:0.5;
 	transition: transform 0.2s ease-in-out;
 	display:inline-block;
+	color:white !important;
+	cursor:pointer;
 }
 .mybtn-play:hover{
     transform: scale(1.1);
