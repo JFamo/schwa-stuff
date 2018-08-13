@@ -107,7 +107,7 @@ function closeNav() {
 }
 
 function randomPage(type){
-  var softwarePages = ["chapter.html","khan.html","picturesque.html"];
+  var softwarePages = ["chapter.html","khan.html","picturesque.html", "napkinspace.html"];
   var gamePages = ["polo.html","golfanywhere.html","richmanswar.html","spacegame.html"];
   var otherPages = ["animation.html","blog1.html","web.html","battery.html","shaqfont.html","music.html"];
   var page="#";
